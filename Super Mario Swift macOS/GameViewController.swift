@@ -21,7 +21,7 @@ class GameViewController: NSViewController {
         let skView = self.view as! SKView
         skView.presentScene(scene)
         
-        skView.ignoresSiblingOrder = true
+        skView.ignoresSiblingOrder = false
         
         skView.showsFPS = true
         skView.showsNodeCount = true
