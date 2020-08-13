@@ -1,5 +1,5 @@
 {
-    "image_name":"level_4",
+    "image_name":"level_1_4",
     "maps":[
         {"start_x":   0, "end_x": 6844, "player_x":110, "player_y": 275}
     ],

@@ -15,16 +15,22 @@ class GameViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = GameScene.newGameScene()
-        
-        // Present the scene
-        let skView = self.view as! SKView
-        skView.presentScene(scene)
-        
-        skView.ignoresSiblingOrder = false
-        
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        if let view: SKView = self.view as? SKView {
+            if let scene = SKScene(fileNamed: "TitleScreenScene") {
+                scene.scaleMode = .aspectFill
+                
+                (scene as! TitleScreenScene).startGame()
+                
+                // Present the scene
+                view.presentScene(scene)
+            }
+            
+            view.ignoresSiblingOrder = false
+            
+            view.showsFPS = true
+            
+            view.showsNodeCount = true
+        }
     }
 
 }

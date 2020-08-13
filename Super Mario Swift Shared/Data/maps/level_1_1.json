@@ -1,5 +1,5 @@
 {
-    "image_name":"level_1",
+    "image_name":"level_1_1",
     "maps":[
         {"start_x":   0, "end_x": 9086, "player_x": 110, "player_y":538},
         {"start_x":9090, "end_x": 9890, "player_x":  80, "player_y": 60},

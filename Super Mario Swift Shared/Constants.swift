@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class Constants {
+    
+    public static let W_SCREEN: CGFloat = 800
+    
+    public static let H_SCREEN: CGFloat = 600
+    
+    // level_1_1 size: (3692, 224)
+}
