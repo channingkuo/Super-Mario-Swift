@@ -49,6 +49,10 @@
 		D72F9AD024E2C78E003F2DDD /* luigi.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9ACD24E2C78E003F2DDD /* luigi.json */; };
 		D72F9AD124E2C78E003F2DDD /* mario.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9ACE24E2C78E003F2DDD /* mario.json */; };
 		D72F9AD224E2C78E003F2DDD /* mario.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9ACE24E2C78E003F2DDD /* mario.json */; };
+		D7382B4E24EB9292001AEA5C /* Level11Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7382B4D24EB9292001AEA5C /* Level11Scene.swift */; };
+		D7382B4F24EB9292001AEA5C /* Level11Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7382B4D24EB9292001AEA5C /* Level11Scene.swift */; };
+		D777CF4324E6562400C82215 /* GameStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777CF4224E6562400C82215 /* GameStatesEnum.swift */; };
+		D777CF4424E6562400C82215 /* GameStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777CF4224E6562400C82215 /* GameStatesEnum.swift */; };
 		D7934FBF24E4E3AE00CD8985 /* TitleScreenScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7934FBE24E4E3AE00CD8985 /* TitleScreenScene.sks */; };
 		D7934FC024E4E3AE00CD8985 /* TitleScreenScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7934FBE24E4E3AE00CD8985 /* TitleScreenScene.sks */; };
 		D7934FC524E5023C00CD8985 /* TitleScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7934FC424E5023C00CD8985 /* TitleScreenScene.swift */; };
@@ -94,6 +98,8 @@
 		D72F9AC324E2C785003F2DDD /* level_1_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_1.json; sourceTree = "<group>"; };
 		D72F9ACD24E2C78E003F2DDD /* luigi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = luigi.json; sourceTree = "<group>"; };
 		D72F9ACE24E2C78E003F2DDD /* mario.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mario.json; sourceTree = "<group>"; };
+		D7382B4D24EB9292001AEA5C /* Level11Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level11Scene.swift; sourceTree = "<group>"; };
+		D777CF4224E6562400C82215 /* GameStatesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatesEnum.swift; sourceTree = "<group>"; };
 		D7934FBE24E4E3AE00CD8985 /* TitleScreenScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScreenScene.sks; sourceTree = "<group>"; };
 		D7934FC424E5023C00CD8985 /* TitleScreenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenScene.swift; sourceTree = "<group>"; };
 		D7E7D5B224E295F6006511BB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 				D7E7D5B224E295F6006511BB /* Actions.sks */,
 				D7E7D5B324E295F6006511BB /* GameScene.sks */,
 				D7E7D5B424E295F6006511BB /* GameScene.swift */,
+				D7934FBE24E4E3AE00CD8985 /* TitleScreenScene.sks */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -146,17 +153,17 @@
 			isa = PBXGroup;
 			children = (
 				D72CD37A24E580B8007F8647 /* Demo */,
-				D7E7D5E624E296EA006511BB /* Level_1_1.sks */,
-				D7934FBE24E4E3AE00CD8985 /* TitleScreenScene.sks */,
-				D7934FC424E5023C00CD8985 /* TitleScreenScene.swift */,
 				D72F9A6024E2C699003F2DDD /* Box.swift */,
 				D72F9A6324E2C6B0003F2DDD /* Brick.swift */,
 				D72F9A6624E2C6BD003F2DDD /* Coin.swift */,
 				D72F9A6924E2C6D1003F2DDD /* Enemy.swift */,
 				D72F9A7524E2C712003F2DDD /* Info.swift */,
+				D7E7D5E624E296EA006511BB /* Level_1_1.sks */,
+				D7382B4D24EB9292001AEA5C /* Level11Scene.swift */,
 				D72F9A6C24E2C6E0003F2DDD /* Player.swift */,
 				D72F9A6F24E2C6EE003F2DDD /* PowerUp.swift */,
 				D72F9A7224E2C706003F2DDD /* Stuff.swift */,
+				D7934FC424E5023C00CD8985 /* TitleScreenScene.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -173,9 +180,10 @@
 		D72F9A4624E2C3CA003F2DDD /* States */ = {
 			isa = PBXGroup;
 			children = (
+				D777CF4224E6562400C82215 /* GameStatesEnum.swift */,
+				D72F9A5124E2C57D003F2DDD /* Level.swift */,
 				D72F9A4E24E2C558003F2DDD /* LoadScreen.swift */,
 				D72F9A4B24E2C540003F2DDD /* MainMenu.swift */,
-				D72F9A5124E2C57D003F2DDD /* Level.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -384,6 +392,7 @@
 				D72F9A5224E2C57D003F2DDD /* Level.swift in Sources */,
 				D72F9A7624E2C712003F2DDD /* Info.swift in Sources */,
 				D72F9A4C24E2C540003F2DDD /* MainMenu.swift in Sources */,
+				D7382B4E24EB9292001AEA5C /* Level11Scene.swift in Sources */,
 				D7E7D5DA24E295F8006511BB /* GameScene.swift in Sources */,
 				D7E7D5C024E295F8006511BB /* GameViewController.swift in Sources */,
 				D72F9A5524E2C598003F2DDD /* Constants.swift in Sources */,
@@ -395,6 +404,7 @@
 				D7E7D5BE24E295F8006511BB /* AppDelegate.swift in Sources */,
 				D72F9A5B24E2C5E7003F2DDD /* Setup.swift in Sources */,
 				D72F9A5824E2C5AD003F2DDD /* Sound.swift in Sources */,
+				D777CF4324E6562400C82215 /* GameStatesEnum.swift in Sources */,
 				D72F9A6D24E2C6E0003F2DDD /* Player.swift in Sources */,
 				D72F9A5E24E2C602003F2DDD /* Tools.swift in Sources */,
 			);
@@ -410,6 +420,7 @@
 				D72F9A5324E2C57D003F2DDD /* Level.swift in Sources */,
 				D72F9A7724E2C712003F2DDD /* Info.swift in Sources */,
 				D72F9A4D24E2C540003F2DDD /* MainMenu.swift in Sources */,
+				D7382B4F24EB9292001AEA5C /* Level11Scene.swift in Sources */,
 				D7E7D5DB24E295F8006511BB /* GameScene.swift in Sources */,
 				D7E7D5D124E295F8006511BB /* GameViewController.swift in Sources */,
 				D72F9A5624E2C598003F2DDD /* Constants.swift in Sources */,
@@ -421,6 +432,7 @@
 				D7E7D5CF24E295F8006511BB /* AppDelegate.swift in Sources */,
 				D72F9A5C24E2C5E7003F2DDD /* Setup.swift in Sources */,
 				D72F9A5924E2C5AD003F2DDD /* Sound.swift in Sources */,
+				D777CF4424E6562400C82215 /* GameStatesEnum.swift in Sources */,
 				D72F9A6E24E2C6E0003F2DDD /* Player.swift in Sources */,
 				D72F9A5F24E2C602003F2DDD /* Tools.swift in Sources */,
 			);

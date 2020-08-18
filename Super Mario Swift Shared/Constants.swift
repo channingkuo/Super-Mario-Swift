@@ -10,9 +10,11 @@ import Foundation
 
 class Constants {
     
+    // Screen
     public static let W_SCREEN: CGFloat = 800
     
     public static let H_SCREEN: CGFloat = 600
     
-    // level_1_1 size: (3692, 224)
+    // Chalkduster / Tsukushi A Round Gothic Bold
+    public static let FONT: String = "Chalkduster"
 }
