@@ -10,11 +10,17 @@ import Foundation
 
 class Constants {
     
+    public static let BUTTON_X: String = "i"
+    public static let BUTTON_Y: String = "o"
+    public static let BUTTON_A: String = "j"
+    public static let BUTTON_B: String = "k"
+    public static let BUTTON_START: String = "\r"
+    
     // Screen
     public static let W_SCREEN: CGFloat = 800
     
     public static let H_SCREEN: CGFloat = 600
     
-    // Chalkduster / Tsukushi A Round Gothic Bold
+    // Chalkduster, Tsukushi A Round Gothic Bold
     public static let FONT: String = "Chalkduster"
 }

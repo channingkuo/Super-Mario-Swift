@@ -53,20 +53,55 @@ class TitleScreenScene: SKScene {
         
     }
     
+    override func keyUp(with event: NSEvent) {
+        switch gameStates {
+        case .newGame:
+            let key = event.characters!
+            if key.elementsEqual(Constants.BUTTON_A) {
+                guard let levelSwitchNode = levelSwitchNode else { return }
+                let action = SKAction.moveTo(y: levelSwitchNode.position.y == 150 ? 200 : 150, duration: 0.1)
+                levelSwitchNode.run(action)
+            } else if key.elementsEqual(Constants.BUTTON_START) {
+                print("Starting Game...")
+                self.view?.presentScene(TitleScreenScene.loadingGame(), transition: .fade(withDuration: 0.5))
+            }
+            break
+        case .loadingGame:
+            break
+        case .timeOut:
+            break
+        case .gameOver:
+            break
+        default:
+            return
+        }
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        super.keyDown(with: event)
+    }
+    
     func setUpNewGameTitleScreen() {
+        // initial game data
+        Info.coins = "00"
+        Info.points = "000000"
+        Info.gameLevel = "1_1"
+        Info.life = 3
+        
+        // intial screen
         backgroundNode = SKSpriteNode(texture: Tools.genNewGameBackGroundTexture())
         backgroundNode!.size = CGSize(width: Constants.W_SCREEN, height: Constants.H_SCREEN)
         backgroundNode!.position = CGPoint(x: 0, y: 0)
         backgroundNode!.anchorPoint = CGPoint(x: 0, y: 0)
         self.addChild(backgroundNode!)
 
-        pointsNode = Tools.genSKLabelNode(text: "000000", position: CGPoint(x: 160 + 10, y: Constants.H_SCREEN - 80), size: 30.0)
+        pointsNode = Tools.genSKLabelNode(text: Info.points, position: CGPoint(x: 160 + 10, y: Constants.H_SCREEN - 80), size: 30.0)
         self.addChild(pointsNode!)
         
-        coinsNode = Tools.genSKLabelNode(text: "00", position: CGPoint(x: 330, y: Constants.H_SCREEN - 80), size: 30.0)
+        coinsNode = Tools.genSKLabelNode(text: Info.coins, position: CGPoint(x: 330, y: Constants.H_SCREEN - 80), size: 30.0)
         self.addChild(coinsNode!)
         
-        levelNode = Tools.genSKLabelNode(text: "1-1", position: CGPoint(x: Constants.W_SCREEN / 2 + 60, y: Constants.H_SCREEN - 80), size: 30.0)
+        levelNode = Tools.genSKLabelNode(text: Info.gameLevel, position: CGPoint(x: Constants.W_SCREEN / 2 + 60, y: Constants.H_SCREEN - 80), size: 30.0)
         self.addChild(levelNode!)
         
         timeNode = Tools.genSKLabelNode(text: "", position: CGPoint(x: Constants.W_SCREEN - 160, y: Constants.H_SCREEN - 80), size: 30.0)
@@ -78,7 +113,7 @@ class TitleScreenScene: SKScene {
         logoNode!.anchorPoint = CGPoint(x: 0, y: 0)
         self.addChild(logoNode!)
         
-        recordNode = Tools.genSKLabelNode(text: "000000", position: CGPoint(x: Constants.W_SCREEN / 2 + 40, y: 90), size: 30.0)
+        recordNode = Tools.genSKLabelNode(text: Info.record, position: CGPoint(x: Constants.W_SCREEN / 2 + 40, y: 90), size: 30.0)
         self.addChild(recordNode!)
         
         levelSwitchNode = SKSpriteNode(texture: SKTexture(imageNamed: "Items/Switch_play_number"))
@@ -129,17 +164,18 @@ class TitleScreenScene: SKScene {
     }
     
     func setUpLoadingTitleScreen() {
-        backgroundNode = SKSpriteNode(texture: Tools.cropTexture(imageNamed: "level_1_1", rect: CGRect(x: 0, y: 0, width: 0.080895513332592, height: 1)))
+        timeNode = Tools.genSKLabelNode(text: "365", position: CGPoint(x: Constants.W_SCREEN - 160, y: Constants.H_SCREEN - 80), size: 30.0)
+        self.addChild(timeNode!)
         
     }
     
     func setUpGameFailedTimeOutTitleScreen() {
-        backgroundNode = SKSpriteNode(texture: Tools.cropTexture(imageNamed: "level_1_1", rect: CGRect(x: 0, y: 0, width: 0.080895513332592, height: 1)))
+        backgroundNode = SKSpriteNode(texture: Tools.cropTexture(imageNamed: "Maps/level_1_1", rect: CGRect(x: 0, y: 0, width: 0.080895513332592, height: 1)))
         
     }
     
     func setUpGameOverTitleScreen() {
-        backgroundNode = SKSpriteNode(texture: Tools.cropTexture(imageNamed: "level_1_1", rect: CGRect(x: 0, y: 0, width: 0.080895513332592, height: 1)))
+        backgroundNode = SKSpriteNode(texture: Tools.cropTexture(imageNamed: "Maps/level_1_1", rect: CGRect(x: 0, y: 0, width: 0.080895513332592, height: 1)))
         
     }
     
