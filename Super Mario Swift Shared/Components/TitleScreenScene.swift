@@ -54,6 +54,10 @@ class TitleScreenScene: SKScene {
     }
     
     override func keyUp(with event: NSEvent) {
+
+    }
+    
+    override func keyDown(with event: NSEvent) {
         switch gameStates {
         case .newGame:
             let key = event.characters!
@@ -77,15 +81,11 @@ class TitleScreenScene: SKScene {
         }
     }
     
-    override func keyDown(with event: NSEvent) {
-        super.keyDown(with: event)
-    }
-    
     func setUpNewGameTitleScreen() {
         // initial game data
         Info.coins = "00"
         Info.points = "000000"
-        Info.gameLevel = "1_1"
+        Info.gameLevel = "1-1"
         Info.life = 3
         
         // intial screen
@@ -164,9 +164,35 @@ class TitleScreenScene: SKScene {
     }
     
     func setUpLoadingTitleScreen() {
+        pointsNode = Tools.genSKLabelNode(text: Info.points, position: CGPoint(x: 160 + 10, y: Constants.H_SCREEN - 80), size: 30.0)
+        self.addChild(pointsNode!)
+        
+        coinsNode = Tools.genSKLabelNode(text: Info.coins, position: CGPoint(x: 330, y: Constants.H_SCREEN - 80), size: 30.0)
+        self.addChild(coinsNode!)
+        
+        levelNode = Tools.genSKLabelNode(text: Level(level: Info.gameLevel).currentLevel, position: CGPoint(x: Constants.W_SCREEN / 2 + 60, y: Constants.H_SCREEN - 80), size: 30.0)
+        self.addChild(levelNode!)
+        
         timeNode = Tools.genSKLabelNode(text: "365", position: CGPoint(x: Constants.W_SCREEN - 160, y: Constants.H_SCREEN - 80), size: 30.0)
         self.addChild(timeNode!)
         
+        self.addChild(Tools.genSKLabelNode(text: "WORLD  \(Level(level: Info.gameLevel).currentLevel)", position: CGPoint(x: Constants.W_SCREEN / 2, y:  Constants.H_SCREEN / 2 + 80), size: 30.0))
+        
+        
+        playerNode = SKSpriteNode(texture: SKTexture(imageNamed: "Players/Player_type_1_1"))
+        playerNode!.size = CGSize(width: 25, height: 33.33)
+        playerNode!.position = CGPoint(x: Constants.W_SCREEN / 2 - 70, y: Constants.H_SCREEN / 2)
+        playerNode!.anchorPoint = CGPoint(x: 0, y: 0)
+        self.addChild(playerNode!)
+        
+        self.addChild(Tools.genSKLabelNode(text: "X  \(Info.life)", position: CGPoint(x: Constants.W_SCREEN / 2 + 30, y:  Constants.H_SCREEN / 2 + 4), size: 30.0))
+        
+        // present game scene after 4s
+        Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(presentGame), userInfo: nil, repeats: false)
+    }
+    
+    @objc func presentGame() {
+        self.view?.presentScene(Level_1_1Scene.gameScene(), transition: .fade(withDuration: 0.5))
     }
     
     func setUpGameFailedTimeOutTitleScreen() {
