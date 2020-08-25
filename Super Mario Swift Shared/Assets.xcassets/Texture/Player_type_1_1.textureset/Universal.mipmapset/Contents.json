@@ -1,0 +1,12 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "levels" : [
+    {
+      "filename" : "Player_type_1_1.png",
+      "mipmap-level" : "base"
+    }
+  ]
+}
