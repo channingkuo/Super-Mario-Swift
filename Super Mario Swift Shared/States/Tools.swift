@@ -19,7 +19,7 @@ class Tools {
         
         let newGameRect: CGRect = CGRect(x: 0, y: 0, width: scaleRate, height: 1)
         
-        return self.cropTexture(imageNamed: "Level_1_1/Universal", rect: newGameRect)
+        return self.cropTexture(imageNamed: "level_1_1_1", rect: newGameRect)
     }
     
     class func genSKLabelNode(text: String, position: CGPoint, size: CGFloat?) -> SKLabelNode {

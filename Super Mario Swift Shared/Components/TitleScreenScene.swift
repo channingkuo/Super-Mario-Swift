@@ -10,10 +10,28 @@ import SpriteKit
 
 class TitleScreenScene: SKScene {
     
+    fileprivate var gameSwitchNode: SKSpriteNode?
+    
+    override func didMove(to view: SKView) {
+        self.gameSwitchNode = self.childNode(withName: "//gameSwitchNode") as? SKSpriteNode
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        let key = event.characters!
+        if key.elementsEqual(Constants.BUTTON_A) {
+            guard let gameSwitchNode = gameSwitchNode else { return }
+            let action = SKAction.moveTo(y: gameSwitchNode.position.y == -100 ? -140 : -100, duration: 0.1)
+            gameSwitchNode.run(action)
+        } else if key.elementsEqual(Constants.BUTTON_START) {
+            print("Starting Game...")
+//            self.view?.presentScene(TitleScreenSceneTest.loadingGame(), transition: .fade(withDuration: 0.5))
+        }
+    }
+    
     class func newGameScene() -> TitleScreenScene {
-        // Load 'GameScene.sks' as an SKScene.
+        // Load 'TitleScrene.sks' as an SKScene.
         guard let scene = SKScene(fileNamed: "TitleScrene") as? TitleScreenScene else {
-            print("Failed to load GameScene.sks")
+            print("Failed to load TitleScrene.sks")
             abort()
         }
         
