@@ -11,9 +11,22 @@ import SpriteKit
 class TitleScreenScene: SKScene {
     
     fileprivate var gameSwitchNode: SKSpriteNode?
+    fileprivate var tileMapNode: SKTileMapNode?
     
     override func didMove(to view: SKView) {
         self.gameSwitchNode = self.childNode(withName: "//gameSwitchNode") as? SKSpriteNode
+        
+        // ground setting
+        self.tileMapNode = self.childNode(withName: "//tileMapNode") as? SKTileMapNode
+        let tileSize = self.tileMapNode!.tileSize
+        let columns = CGFloat(self.tileMapNode!.numberOfColumns)
+        let rows = CGFloat(self.tileMapNode!.numberOfRows)
+        let physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: tileSize.width * columns, height: tileSize.height * rows))
+        physicsBody.isDynamic = false
+        physicsBody.allowsRotation = false
+        physicsBody.affectedByGravity = false
+        physicsBody.pinned = true
+        self.tileMapNode!.physicsBody = physicsBody
     }
     
     override func keyDown(with event: NSEvent) {
