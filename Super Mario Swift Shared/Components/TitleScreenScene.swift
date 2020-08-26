@@ -18,7 +18,7 @@ class TitleScreenScene: SKScene {
     
     override func keyDown(with event: NSEvent) {
         let key = event.characters!
-        if key.elementsEqual(Constants.BUTTON_A) {
+        if key.elementsEqual(Constants.BUTTON_SELECT) {
             guard let gameSwitchNode = gameSwitchNode else { return }
             let action = SKAction.moveTo(y: gameSwitchNode.position.y == -100 ? -140 : -100, duration: 0.1)
             gameSwitchNode.run(action)
