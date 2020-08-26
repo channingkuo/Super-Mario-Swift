@@ -14,6 +14,7 @@ class Constants {
     public static let BUTTON_Y: String = "o"
     public static let BUTTON_A: String = "j"
     public static let BUTTON_B: String = "k"
+    public static let BUTTON_SELECT: String = "p"
     public static let BUTTON_START: String = "\r"
     
     // Screen
