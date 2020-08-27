@@ -1,5 +1,5 @@
 //
-//  TitleScreenScene.swift
+//  TitleScene.swift
 //  Super Mario Swift
 //
 //  Created by Channing Kuo on 2020/8/24.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class TitleScreenScene: SKScene {
+class TitleScene: SKScene {
     
     fileprivate var gameSwitchNode: SKSpriteNode?
     fileprivate var tileMapNode: SKTileMapNode?
@@ -37,14 +37,14 @@ class TitleScreenScene: SKScene {
             gameSwitchNode.run(action)
         } else if key.elementsEqual(Constants.BUTTON_START) {
             print("Starting Game...")
-//            self.view?.presentScene(TitleScreenSceneTest.loadingGame(), transition: .fade(withDuration: 0.5))
+            self.view?.presentScene(LoadingScene.newLoadingScene(), transition: .fade(withDuration: 0.5))
         }
     }
     
-    class func newGameScene() -> TitleScreenScene {
-        // Load 'TitleScrene.sks' as an SKScene.
-        guard let scene = SKScene(fileNamed: "TitleScrene") as? TitleScreenScene else {
-            print("Failed to load TitleScrene.sks")
+    class func newGameScene() -> TitleScene {
+        // Load 'TitleScene.sks' as an SKScene.
+        guard let scene = SKScene(fileNamed: "TitleScene") as? TitleScene else {
+            print("Failed to load TitleScene.sks")
             abort()
         }
         

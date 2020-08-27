@@ -18,9 +18,9 @@ class Constants {
     public static let BUTTON_START: String = "\r"
     
     // Screen
-    public static let W_SCREEN: CGFloat = 800
+    public static let W_SCREEN: CGFloat = 880
     
-    public static let H_SCREEN: CGFloat = 600
+    public static let H_SCREEN: CGFloat = 686
     
     // Chalkboard SE Regular, Tsukushi A Round Gothic Bold
     public static let FONT: String = "Chalkboard SE Regular"

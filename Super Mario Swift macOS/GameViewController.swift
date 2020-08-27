@@ -21,7 +21,7 @@ class GameViewController: NSViewController {
     func startGame() {
         let view: SKView = self.view as! SKView
         
-        let scene = TitleScreenScene.newGameScene()
+        let scene = TitleScene.newGameScene()
         scene.scaleMode = .aspectFill
         
         view.presentScene(scene)

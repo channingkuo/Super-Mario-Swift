@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D704BEC524F6B6A400F8AD9B /* LoadingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D704BEC424F6B6A400F8AD9B /* LoadingScene.sks */; };
+		D704BEC624F6B6A400F8AD9B /* LoadingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D704BEC424F6B6A400F8AD9B /* LoadingScene.sks */; };
 		D72F9A4C24E2C540003F2DDD /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A4B24E2C540003F2DDD /* MainMenu.swift */; };
 		D72F9A4D24E2C540003F2DDD /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A4B24E2C540003F2DDD /* MainMenu.swift */; };
-		D72F9A4F24E2C558003F2DDD /* LoadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A4E24E2C558003F2DDD /* LoadScreen.swift */; };
-		D72F9A5024E2C558003F2DDD /* LoadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A4E24E2C558003F2DDD /* LoadScreen.swift */; };
+		D72F9A4F24E2C558003F2DDD /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A4E24E2C558003F2DDD /* LoadingScene.swift */; };
+		D72F9A5024E2C558003F2DDD /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A4E24E2C558003F2DDD /* LoadingScene.swift */; };
 		D72F9A5224E2C57D003F2DDD /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A5124E2C57D003F2DDD /* Level.swift */; };
 		D72F9A5324E2C57D003F2DDD /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A5124E2C57D003F2DDD /* Level.swift */; };
 		D72F9A5524E2C598003F2DDD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A5424E2C598003F2DDD /* Constants.swift */; };
@@ -53,10 +55,10 @@
 		D7382B4F24EB9292001AEA5C /* Level_1_1Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7382B4D24EB9292001AEA5C /* Level_1_1Scene.swift */; };
 		D756404824F68AAC00A43518 /* BrickTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = D756404624F68AAC00A43518 /* BrickTileSet.sks */; };
 		D756404924F68AAC00A43518 /* BrickTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = D756404624F68AAC00A43518 /* BrickTileSet.sks */; };
-		D757FD1924F41451002B6FD0 /* TitleScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757FD1824F41451002B6FD0 /* TitleScreenScene.swift */; };
-		D757FD1A24F41451002B6FD0 /* TitleScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757FD1824F41451002B6FD0 /* TitleScreenScene.swift */; };
-		D7588CA024F3E7C0009E5FBF /* TitleScrene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7588C9F24F3E7C0009E5FBF /* TitleScrene.sks */; };
-		D7588CA124F3E7C0009E5FBF /* TitleScrene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7588C9F24F3E7C0009E5FBF /* TitleScrene.sks */; };
+		D757FD1924F41451002B6FD0 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757FD1824F41451002B6FD0 /* TitleScene.swift */; };
+		D757FD1A24F41451002B6FD0 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757FD1824F41451002B6FD0 /* TitleScene.swift */; };
+		D7588CA024F3E7C0009E5FBF /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */; };
+		D7588CA124F3E7C0009E5FBF /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */; };
 		D777CF4324E6562400C82215 /* GameStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777CF4224E6562400C82215 /* GameStatesEnum.swift */; };
 		D777CF4424E6562400C82215 /* GameStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777CF4224E6562400C82215 /* GameStatesEnum.swift */; };
 		D7E7D5BE24E295F8006511BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E7D5BD24E295F8006511BB /* AppDelegate.swift */; };
@@ -79,8 +81,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D704BEC424F6B6A400F8AD9B /* LoadingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoadingScene.sks; sourceTree = "<group>"; };
 		D72F9A4B24E2C540003F2DDD /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
-		D72F9A4E24E2C558003F2DDD /* LoadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadScreen.swift; sourceTree = "<group>"; };
+		D72F9A4E24E2C558003F2DDD /* LoadingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
 		D72F9A5124E2C57D003F2DDD /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		D72F9A5424E2C598003F2DDD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D72F9A5724E2C5AD003F2DDD /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
@@ -102,8 +105,8 @@
 		D72F9ACE24E2C78E003F2DDD /* mario.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mario.json; sourceTree = "<group>"; };
 		D7382B4D24EB9292001AEA5C /* Level_1_1Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_1_1Scene.swift; sourceTree = "<group>"; };
 		D756404624F68AAC00A43518 /* BrickTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BrickTileSet.sks; sourceTree = "<group>"; };
-		D757FD1824F41451002B6FD0 /* TitleScreenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenScene.swift; sourceTree = "<group>"; };
-		D7588C9F24F3E7C0009E5FBF /* TitleScrene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScrene.sks; sourceTree = "<group>"; };
+		D757FD1824F41451002B6FD0 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
+		D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
 		D777CF4224E6562400C82215 /* GameStatesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatesEnum.swift; sourceTree = "<group>"; };
 		D7E7D5B224E295F6006511BB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		D7E7D5B324E295F6006511BB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -162,14 +165,15 @@
 				D72F9A6924E2C6D1003F2DDD /* Enemy.swift */,
 				D7E7D5E624E296EA006511BB /* Level_1_1.sks */,
 				D7382B4D24EB9292001AEA5C /* Level_1_1Scene.swift */,
-				D72F9A4E24E2C558003F2DDD /* LoadScreen.swift */,
+				D704BEC424F6B6A400F8AD9B /* LoadingScene.sks */,
+				D72F9A4E24E2C558003F2DDD /* LoadingScene.swift */,
 				D72F9A4B24E2C540003F2DDD /* MainMenu.swift */,
 				D72F9A6C24E2C6E0003F2DDD /* Player.swift */,
 				D72F9A6F24E2C6EE003F2DDD /* PowerUp.swift */,
 				D72F9A5724E2C5AD003F2DDD /* Sound.swift */,
 				D72F9A7224E2C706003F2DDD /* Stuff.swift */,
-				D7588C9F24F3E7C0009E5FBF /* TitleScrene.sks */,
-				D757FD1824F41451002B6FD0 /* TitleScreenScene.swift */,
+				D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */,
+				D757FD1824F41451002B6FD0 /* TitleScene.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -351,10 +355,11 @@
 				D7E7D5D824E295F8006511BB /* GameScene.sks in Resources */,
 				D7E7D5C324E295F8006511BB /* Main.storyboard in Resources */,
 				D72F9ACF24E2C78E003F2DDD /* luigi.json in Resources */,
+				D704BEC524F6B6A400F8AD9B /* LoadingScene.sks in Resources */,
 				D7E7D5E724E296EA006511BB /* Level_1_1.sks in Resources */,
 				D7E7D5D624E295F8006511BB /* Actions.sks in Resources */,
 				D72F9AD124E2C78E003F2DDD /* mario.json in Resources */,
-				D7588CA024F3E7C0009E5FBF /* TitleScrene.sks in Resources */,
+				D7588CA024F3E7C0009E5FBF /* TitleScene.sks in Resources */,
 				D72F9AC824E2C785003F2DDD /* level_1_4.json in Resources */,
 				D72F9AC624E2C785003F2DDD /* level_1_3.json in Resources */,
 				D7E7D5C624E295F8006511BB /* LaunchScreen.storyboard in Resources */,
@@ -374,6 +379,7 @@
 				D72F9AD224E2C78E003F2DDD /* mario.json in Resources */,
 				D72F9AC724E2C785003F2DDD /* level_1_3.json in Resources */,
 				D72F9AD024E2C78E003F2DDD /* luigi.json in Resources */,
+				D704BEC624F6B6A400F8AD9B /* LoadingScene.sks in Resources */,
 				D72F9AC524E2C785003F2DDD /* level_1_2.json in Resources */,
 				D7E7D5E824E296EA006511BB /* Level_1_1.sks in Resources */,
 				D756404924F68AAC00A43518 /* BrickTileSet.sks in Resources */,
@@ -381,7 +387,7 @@
 				D7E7D5D724E295F8006511BB /* Actions.sks in Resources */,
 				D72F9ACB24E2C785003F2DDD /* level_1_1.json in Resources */,
 				D72F9AC924E2C785003F2DDD /* level_1_4.json in Resources */,
-				D7588CA124F3E7C0009E5FBF /* TitleScrene.sks in Resources */,
+				D7588CA124F3E7C0009E5FBF /* TitleScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,9 +408,9 @@
 				D7E7D5C024E295F8006511BB /* GameViewController.swift in Sources */,
 				D72F9A5524E2C598003F2DDD /* Constants.swift in Sources */,
 				D72F9A6424E2C6B0003F2DDD /* Brick.swift in Sources */,
-				D757FD1924F41451002B6FD0 /* TitleScreenScene.swift in Sources */,
+				D757FD1924F41451002B6FD0 /* TitleScene.swift in Sources */,
 				D72F9A6124E2C699003F2DDD /* Box.swift in Sources */,
-				D72F9A4F24E2C558003F2DDD /* LoadScreen.swift in Sources */,
+				D72F9A4F24E2C558003F2DDD /* LoadingScene.swift in Sources */,
 				D72F9A6724E2C6BD003F2DDD /* Coin.swift in Sources */,
 				D72F9A7024E2C6EE003F2DDD /* PowerUp.swift in Sources */,
 				D7E7D5BE24E295F8006511BB /* AppDelegate.swift in Sources */,
@@ -430,9 +436,9 @@
 				D7E7D5D124E295F8006511BB /* GameViewController.swift in Sources */,
 				D72F9A5624E2C598003F2DDD /* Constants.swift in Sources */,
 				D72F9A6524E2C6B0003F2DDD /* Brick.swift in Sources */,
-				D757FD1A24F41451002B6FD0 /* TitleScreenScene.swift in Sources */,
+				D757FD1A24F41451002B6FD0 /* TitleScene.swift in Sources */,
 				D72F9A6224E2C699003F2DDD /* Box.swift in Sources */,
-				D72F9A5024E2C558003F2DDD /* LoadScreen.swift in Sources */,
+				D72F9A5024E2C558003F2DDD /* LoadingScene.swift in Sources */,
 				D72F9A6824E2C6BD003F2DDD /* Coin.swift in Sources */,
 				D72F9A7124E2C6EE003F2DDD /* PowerUp.swift in Sources */,
 				D7E7D5CF24E295F8006511BB /* AppDelegate.swift in Sources */,
