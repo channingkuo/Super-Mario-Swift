@@ -12,9 +12,14 @@ class TitleScene: SKScene {
     
     fileprivate var gameSwitchNode: SKSpriteNode?
     fileprivate var tileMapNode: SKTileMapNode?
+    fileprivate var topTitleNode: SKNode?
+    fileprivate var gameTimeNode: SKLabelNode?
     
     override func didMove(to view: SKView) {
         self.gameSwitchNode = self.childNode(withName: "//gameSwitchNode") as? SKSpriteNode
+        self.topTitleNode = self.childNode(withName: "//topTitleNode")
+        self.gameTimeNode = self.topTitleNode!.childNode(withName: "//gameTimeNode") as? SKLabelNode
+        self.gameTimeNode!.attributedText = NSAttributedString.init(string: "")
         
         // ground setting
         self.tileMapNode = self.childNode(withName: "//tileMapNode") as? SKTileMapNode
@@ -33,7 +38,7 @@ class TitleScene: SKScene {
         let key = event.characters!
         if key.elementsEqual(Constants.BUTTON_SELECT) {
             guard let gameSwitchNode = gameSwitchNode else { return }
-            let action = SKAction.moveTo(y: gameSwitchNode.position.y == -100 ? -140 : -100, duration: 0.1)
+            let action = SKAction.moveTo(y: gameSwitchNode.position.y == -90 ? -130 : -90, duration: 0.1)
             gameSwitchNode.run(action)
         } else if key.elementsEqual(Constants.BUTTON_START) {
             print("Starting Game...")
