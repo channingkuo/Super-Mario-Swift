@@ -16,22 +16,22 @@ class TitleScene: SKScene {
     fileprivate var gameTimeNode: SKLabelNode?
     
     override func didMove(to view: SKView) {
-        self.gameSwitchNode = self.childNode(withName: "//gameSwitchNode") as? SKSpriteNode
-        self.topTitleNode = self.childNode(withName: "//topTitleNode")
-        self.gameTimeNode = self.topTitleNode!.childNode(withName: "//gameTimeNode") as? SKLabelNode
-        self.gameTimeNode!.attributedText = NSAttributedString.init(string: "")
+        gameSwitchNode = self.childNode(withName: "//gameSwitchNode") as? SKSpriteNode
+        topTitleNode = self.childNode(withName: "//topTitleNode")
+        gameTimeNode = topTitleNode!.childNode(withName: "//gameTimeNode") as? SKLabelNode
+        gameTimeNode!.text = ""
         
         // ground setting
-        self.tileMapNode = self.childNode(withName: "//tileMapNode") as? SKTileMapNode
-        let tileSize = self.tileMapNode!.tileSize
-        let columns = CGFloat(self.tileMapNode!.numberOfColumns)
-        let rows = CGFloat(self.tileMapNode!.numberOfRows)
+        tileMapNode = self.childNode(withName: "//tileMapNode") as? SKTileMapNode
+        let tileSize = tileMapNode!.tileSize
+        let columns = CGFloat(tileMapNode!.numberOfColumns)
+        let rows = CGFloat(tileMapNode!.numberOfRows)
         let physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: tileSize.width * columns, height: tileSize.height * rows))
         physicsBody.isDynamic = false
         physicsBody.allowsRotation = false
         physicsBody.affectedByGravity = false
         physicsBody.pinned = true
-        self.tileMapNode!.physicsBody = physicsBody
+        tileMapNode!.physicsBody = physicsBody
     }
     
     override func keyDown(with event: NSEvent) {
@@ -42,7 +42,7 @@ class TitleScene: SKScene {
             gameSwitchNode.run(action)
         } else if key.elementsEqual(Constants.BUTTON_START) {
             print("Starting Game...")
-            self.view?.presentScene(LoadingScene.newLoadingScene(), transition: .fade(withDuration: 0.5))
+            self.view?.presentScene(LoadingScene.newLoadingScene(), transition: .fade(withDuration: 0.3))
         }
     }
     

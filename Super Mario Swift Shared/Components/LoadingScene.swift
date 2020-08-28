@@ -10,8 +10,40 @@ import SpriteKit
 
 class LoadingScene: SKScene {
     
+    fileprivate var topTitleNode: SKNode?
+    fileprivate var gamePointNode: SKLabelNode?
+    fileprivate var gameCoinNode: SKLabelNode?
+    fileprivate var gameLevelNode: SKLabelNode?
+    fileprivate var gameTimeNode: SKLabelNode?
+    fileprivate var gameLevelCenterNode: SKLabelNode?
+    fileprivate var gameLifeNode: SKLabelNode?
+    
     override func didMove(to view: SKView) {
+        topTitleNode = self.childNode(withName: "//topTitleNode")
         
+        gamePointNode = topTitleNode!.childNode(withName: "//gamePointNode") as? SKLabelNode
+        gamePointNode!.text = Info.points
+        
+        gameCoinNode = topTitleNode!.childNode(withName: "//gameCoinNode") as? SKLabelNode
+        gameCoinNode!.text = "x \(Info.coins)"
+        
+        gameLevelNode = topTitleNode!.childNode(withName: "//gameLevelNode") as? SKLabelNode
+        gameLevelNode!.text = Level(level: Info.gameLevel).currentLevel
+        
+        gameTimeNode = topTitleNode!.childNode(withName: "//gameTimeNode") as? SKLabelNode
+        gameTimeNode!.text = ""
+        
+        gameLevelCenterNode = self.childNode(withName: "//gameLevelCenterNode") as? SKLabelNode
+        gameLevelCenterNode!.text = Level(level: Info.gameLevel).currentLevel
+        
+        gameLifeNode = self.childNode(withName: "//gameLifeNode") as? SKLabelNode
+        gameLifeNode!.text = String(Info.life)
+        
+        Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(presentGame), userInfo: nil, repeats: false)
+    }
+    
+    @objc func presentGame() {
+        self.view?.presentScene(Level_1_1Scene.gameScene(), transition: .fade(withDuration: 0.3))
     }
     
     override func keyDown(with event: NSEvent) {
