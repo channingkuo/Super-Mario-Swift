@@ -18,12 +18,15 @@ class Level {
     
     var currentLevel: String {
         get {
-            return self.level
+            return self.level.isEmpty ? "1-1" : self.level
         }
     }
     
     var nextLevel: String {
         get {
+            if self.level.isEmpty {
+                return "1-1"
+            }
             let splits = self.level.split(separator: "-")
             
             var chapter: Int = Int(splits[0])!

@@ -43,7 +43,7 @@ class LoadingScene: SKScene {
     }
     
     @objc func presentGame() {
-        self.view?.presentScene(Level_1_1Scene.gameScene(), transition: .fade(withDuration: 0.3))
+        self.view?.presentScene(Map.nextScene(), transition: .fade(withDuration: 0.3))
     }
     
     override func keyDown(with event: NSEvent) {

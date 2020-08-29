@@ -45,8 +45,8 @@
 		D72F9AC724E2C785003F2DDD /* level_1_3.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC124E2C785003F2DDD /* level_1_3.json */; };
 		D72F9AC824E2C785003F2DDD /* level_1_4.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC224E2C785003F2DDD /* level_1_4.json */; };
 		D72F9AC924E2C785003F2DDD /* level_1_4.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC224E2C785003F2DDD /* level_1_4.json */; };
-		D72F9ACA24E2C785003F2DDD /* level_1_1.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC324E2C785003F2DDD /* level_1_1.json */; };
-		D72F9ACB24E2C785003F2DDD /* level_1_1.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC324E2C785003F2DDD /* level_1_1.json */; };
+		D72F9ACA24E2C785003F2DDD /* level_1_1_test.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC324E2C785003F2DDD /* level_1_1_test.json */; };
+		D72F9ACB24E2C785003F2DDD /* level_1_1_test.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC324E2C785003F2DDD /* level_1_1_test.json */; };
 		D72F9ACF24E2C78E003F2DDD /* luigi.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9ACD24E2C78E003F2DDD /* luigi.json */; };
 		D72F9AD024E2C78E003F2DDD /* luigi.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9ACD24E2C78E003F2DDD /* luigi.json */; };
 		D72F9AD124E2C78E003F2DDD /* mario.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9ACE24E2C78E003F2DDD /* mario.json */; };
@@ -61,6 +61,10 @@
 		D7588CA124F3E7C0009E5FBF /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */; };
 		D777CF4324E6562400C82215 /* GameStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777CF4224E6562400C82215 /* GameStatesEnum.swift */; };
 		D777CF4424E6562400C82215 /* GameStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777CF4224E6562400C82215 /* GameStatesEnum.swift */; };
+		D7D5907624FA30C300B08A06 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5907524FA30C300B08A06 /* Map.swift */; };
+		D7D5907724FA30C300B08A06 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5907524FA30C300B08A06 /* Map.swift */; };
+		D7D5907924FAA4A000B08A06 /* level_1_1.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D5907824FAA4A000B08A06 /* level_1_1.json */; };
+		D7D5907A24FAA4A000B08A06 /* level_1_1.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D5907824FAA4A000B08A06 /* level_1_1.json */; };
 		D7E7D5BE24E295F8006511BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E7D5BD24E295F8006511BB /* AppDelegate.swift */; };
 		D7E7D5C024E295F8006511BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E7D5BF24E295F8006511BB /* GameViewController.swift */; };
 		D7E7D5C324E295F8006511BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E7D5C124E295F8006511BB /* Main.storyboard */; };
@@ -100,7 +104,7 @@
 		D72F9AC024E2C785003F2DDD /* level_1_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_2.json; sourceTree = "<group>"; };
 		D72F9AC124E2C785003F2DDD /* level_1_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_3.json; sourceTree = "<group>"; };
 		D72F9AC224E2C785003F2DDD /* level_1_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_4.json; sourceTree = "<group>"; };
-		D72F9AC324E2C785003F2DDD /* level_1_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_1.json; sourceTree = "<group>"; };
+		D72F9AC324E2C785003F2DDD /* level_1_1_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_1_test.json; sourceTree = "<group>"; };
 		D72F9ACD24E2C78E003F2DDD /* luigi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = luigi.json; sourceTree = "<group>"; };
 		D72F9ACE24E2C78E003F2DDD /* mario.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mario.json; sourceTree = "<group>"; };
 		D7382B4D24EB9292001AEA5C /* Level_1_1Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_1_1Scene.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 		D757FD1824F41451002B6FD0 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
 		D777CF4224E6562400C82215 /* GameStatesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatesEnum.swift; sourceTree = "<group>"; };
+		D7D5907524FA30C300B08A06 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		D7D5907824FAA4A000B08A06 /* level_1_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_1.json; sourceTree = "<group>"; };
 		D7E7D5B224E295F6006511BB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		D7E7D5B324E295F6006511BB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		D7E7D5B424E295F6006511BB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 				D704BEC424F6B6A400F8AD9B /* LoadingScene.sks */,
 				D72F9A4E24E2C558003F2DDD /* LoadingScene.swift */,
 				D72F9A4B24E2C540003F2DDD /* MainMenu.swift */,
+				D7D5907524FA30C300B08A06 /* Map.swift */,
 				D72F9A6C24E2C6E0003F2DDD /* Player.swift */,
 				D72F9A6F24E2C6EE003F2DDD /* PowerUp.swift */,
 				D72F9A5724E2C5AD003F2DDD /* Sound.swift */,
@@ -203,7 +210,8 @@
 		D72F9ABF24E2C785003F2DDD /* maps */ = {
 			isa = PBXGroup;
 			children = (
-				D72F9AC324E2C785003F2DDD /* level_1_1.json */,
+				D7D5907824FAA4A000B08A06 /* level_1_1.json */,
+				D72F9AC324E2C785003F2DDD /* level_1_1_test.json */,
 				D72F9AC024E2C785003F2DDD /* level_1_2.json */,
 				D72F9AC124E2C785003F2DDD /* level_1_3.json */,
 				D72F9AC224E2C785003F2DDD /* level_1_4.json */,
@@ -363,9 +371,10 @@
 				D72F9AC824E2C785003F2DDD /* level_1_4.json in Resources */,
 				D72F9AC624E2C785003F2DDD /* level_1_3.json in Resources */,
 				D7E7D5C624E295F8006511BB /* LaunchScreen.storyboard in Resources */,
-				D72F9ACA24E2C785003F2DDD /* level_1_1.json in Resources */,
+				D72F9ACA24E2C785003F2DDD /* level_1_1_test.json in Resources */,
 				D7E7D5DC24E295F8006511BB /* Assets.xcassets in Resources */,
 				D756404824F68AAC00A43518 /* BrickTileSet.sks in Resources */,
+				D7D5907924FAA4A000B08A06 /* level_1_1.json in Resources */,
 				D72F9AC424E2C785003F2DDD /* level_1_2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,11 +390,12 @@
 				D72F9AD024E2C78E003F2DDD /* luigi.json in Resources */,
 				D704BEC624F6B6A400F8AD9B /* LoadingScene.sks in Resources */,
 				D72F9AC524E2C785003F2DDD /* level_1_2.json in Resources */,
+				D7D5907A24FAA4A000B08A06 /* level_1_1.json in Resources */,
 				D7E7D5E824E296EA006511BB /* Level_1_1.sks in Resources */,
 				D756404924F68AAC00A43518 /* BrickTileSet.sks in Resources */,
 				D7E7D5DD24E295F8006511BB /* Assets.xcassets in Resources */,
 				D7E7D5D724E295F8006511BB /* Actions.sks in Resources */,
-				D72F9ACB24E2C785003F2DDD /* level_1_1.json in Resources */,
+				D72F9ACB24E2C785003F2DDD /* level_1_1_test.json in Resources */,
 				D72F9AC924E2C785003F2DDD /* level_1_4.json in Resources */,
 				D7588CA124F3E7C0009E5FBF /* TitleScene.sks in Resources */,
 			);
@@ -416,6 +426,7 @@
 				D7E7D5BE24E295F8006511BB /* AppDelegate.swift in Sources */,
 				D72F9A5B24E2C5E7003F2DDD /* Setup.swift in Sources */,
 				D72F9A5824E2C5AD003F2DDD /* Sound.swift in Sources */,
+				D7D5907624FA30C300B08A06 /* Map.swift in Sources */,
 				D777CF4324E6562400C82215 /* GameStatesEnum.swift in Sources */,
 				D72F9A6D24E2C6E0003F2DDD /* Player.swift in Sources */,
 				D72F9A5E24E2C602003F2DDD /* Tools.swift in Sources */,
@@ -444,6 +455,7 @@
 				D7E7D5CF24E295F8006511BB /* AppDelegate.swift in Sources */,
 				D72F9A5C24E2C5E7003F2DDD /* Setup.swift in Sources */,
 				D72F9A5924E2C5AD003F2DDD /* Sound.swift in Sources */,
+				D7D5907724FA30C300B08A06 /* Map.swift in Sources */,
 				D777CF4424E6562400C82215 /* GameStatesEnum.swift in Sources */,
 				D72F9A6E24E2C6E0003F2DDD /* Player.swift in Sources */,
 				D72F9A5F24E2C602003F2DDD /* Tools.swift in Sources */,

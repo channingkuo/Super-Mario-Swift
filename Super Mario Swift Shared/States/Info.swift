@@ -13,7 +13,7 @@ class Info {
     public static var gameLevel: String {
         get{
             let v = UserDefaults.standard.value(forKey: "gameLevel")
-            return v == nil ? "1-1" : v as! String
+            return v == nil ? "" : v as! String
         }
         set{
             UserDefaults.standard.set(newValue, forKey: "gameLevel")

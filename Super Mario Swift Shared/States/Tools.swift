@@ -41,4 +41,21 @@ class Tools {
         }
         return SKTexture.init(rect: rect!, in: texture)
     }
+    
+    class func openJsonFile(_ level: String) -> NSDictionary {
+        let path = Bundle.main.path(forResource: level.replacingOccurrences(of: "-", with: "_"), ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        do {
+            let data = try Data(contentsOf: url)
+            
+            let jsonData: Any = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
+            
+            let mapDictionary = jsonData as! NSDictionary
+            
+            return mapDictionary
+        } catch let error as Error? {
+            print("read local map data error!", error as Any)
+            return NSDictionary.init()
+        }
+    }
 }

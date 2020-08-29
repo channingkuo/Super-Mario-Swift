@@ -56,6 +56,11 @@ class TitleScene: SKScene {
         // Set the scale mode to scale to fit the window
         scene.scaleMode = .aspectFill
         
+        Info.coins = "00"
+        Info.gameLevel = ""
+        Info.life = 3
+        Info.points = "000000"
+        
         return scene
     }
 }
