@@ -2,7 +2,6 @@
     "map": {
         "col": 210,
         "row": 14.29166666,
-        "height": 686,
         "identity": {
             "width": 55,
             "height": 48,
@@ -10,11 +9,8 @@
         }
     },
     "ground": [
-        {"row": 0, "col": 69, "step": 2},
-        {"row": 1, "col": 69, "step": 2},
-        {"row": 0, "col": 86, "step": 3},
-        {"row": 1, "col": 86, "step": 3},
-        {"row": 0, "col": 153, "step": 2},
-        {"row": 1, "col": 153, "step": 2}
+        {"col": 69, "step": 2},
+        {"col": 86, "step": 3},
+        {"col": 153, "step": 2}
     ]
 }
