@@ -12,6 +12,8 @@ class Map: SKScene {
     
     fileprivate var mapDictionary: NSDictionary = NSDictionary()
     
+    fileprivate var cameraNode: SKCameraNode = SKCameraNode.init()
+    
     init(level: String, size: CGSize) {
         super.init(size: size)
         
@@ -25,6 +27,11 @@ class Map: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        // camera
+        self.cameraNode.position = CGPoint(x: Constants.W_SCREEN / 2, y: Constants.H_SCREEN / 2)
+        self.camera = self.cameraNode
+        
+        
         let map = elementValue(element: self.mapDictionary, forKey: "map", type: NSDictionary.self)
         let identity = elementValue(element: map, forKey: "identity", type: NSDictionary.self)
 
@@ -61,13 +68,13 @@ class Map: SKScene {
         
         let ground = elementValue(element: self.mapDictionary, forKey: "ground", type: NSArray.self)
         // 计算ground镂空部分
-        var fullColums: [Int] = [Int]()
+        var fallColums: [Int] = [Int]()
         for item in ground {
             let itemDic = item as! NSDictionary
             let colValue = elementValue(element: itemDic, forKey: "col", type: Int.self)
             let stepValue = elementValue(element: itemDic, forKey: "step", type: Int.self)
             for index in 1...stepValue {
-                fullColums.append(colValue + index - 1)
+                fallColums.append(colValue + index - 1)
             }
         }
         
@@ -77,12 +84,16 @@ class Map: SKScene {
                 tileMap.tileSize = CGSize(width: 55, height: 39)
             }
             for col in 0...columns {
-                if fullColums.contains(col) {
+                if fallColums.contains(col) {
                     continue
                 }
                 tileMap.setTileGroup(row == 0 ? groundUpperEdgeBrickTile : groundBrickTile, forColumn: col, row: row)
             }
         }
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        
     }
     
     func elementValue<T>(element: NSDictionary, forKey key: String, type: T.Type) -> T {
@@ -93,3 +104,24 @@ class Map: SKScene {
         return Map.init(level: "level_\(Level(level: Info.gameLevel).nextLevel)", size: CGSize(width: Constants.W_SCREEN, height: Constants.H_SCREEN))
     }
 }
+
+extension Map {
+
+    override func keyDown(with event: NSEvent) {
+        let key = event.characters!.lowercased()
+        switch key {
+        case Constants.BUTTON_LEFT:
+            break
+        case Constants.BUTTON_DOWN:
+            break
+        case Constants.BUTTON_RIGHT:
+            self.cameraNode.position.x += 10
+            break
+        case Constants.BUTTON_UP:
+            break
+        default:
+            break
+        }
+    }
+}
+
