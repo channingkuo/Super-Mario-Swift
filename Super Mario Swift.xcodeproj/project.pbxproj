@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -82,6 +82,7 @@
 		D7E7D5DD24E295F8006511BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E7D5B524E295F8006511BB /* Assets.xcassets */; };
 		D7E7D5E724E296EA006511BB /* Level_1_1.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7E7D5E624E296EA006511BB /* Level_1_1.sks */; };
 		D7E7D5E824E296EA006511BB /* Level_1_1.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7E7D5E624E296EA006511BB /* Level_1_1.sks */; };
+		D7F2902924FDF996008BE7CE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = D7F2902824FDF996008BE7CE /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F2902924FDF996008BE7CE /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +316,9 @@
 			dependencies = (
 			);
 			name = "Super Mario Swift macOS";
+			packageProductDependencies = (
+				D7F2902824FDF996008BE7CE /* SwiftyJSON */,
+			);
 			productName = "Super Mario Swift macOS";
 			productReference = D7E7D5CC24E295F8006511BB /* Super Mario Swift.app */;
 			productType = "com.apple.product-type.application";
@@ -345,6 +350,9 @@
 				Base,
 			);
 			mainGroup = D7E7D5AC24E295F6006511BB;
+			packageReferences = (
+				D7F2902724FDF996008BE7CE /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = D7E7D5BB24E295F8006511BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -715,6 +723,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D7F2902724FDF996008BE7CE /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D7F2902824FDF996008BE7CE /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7F2902724FDF996008BE7CE /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D7E7D5AD24E295F6006511BB /* Project object */;
 }
