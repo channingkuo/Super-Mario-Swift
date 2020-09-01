@@ -1,16 +1,45 @@
 {
     "map": {
-        "col": 210,
-        "row": 14.29166666,
-        "identity": {
-            "width": 55,
-            "height": 48,
-            "texture": "base_ground_brick"
-        }
+        "columns": 210,
+        "rows": 15,
+        "size": [55, 48]
     },
-    "ground": [
-        {"col": 69, "step": 2},
-        {"col": 86, "step": 3},
-        {"col": 153, "step": 2}
-    ]
+    "ground": {
+        "x": 0,
+        "y": -9,
+        "columns": 210,
+        "rows": 2,
+        "tiles": [
+            {"row": 0, "column": 69, "repeat": 2},
+            {"row": 0, "column": 86, "repeat": 3},
+            {"row": 0, "column": 153, "repeat": 2},
+            {"row": 1, "column": 69, "repeat": 2},
+            {"row": 1, "column": 86, "repeat": 3},
+            {"row": 1, "column": 153, "repeat": 2}
+        ],
+        "||Repeat Comment||": "repeat => repeat use transparency tile when position in (row, column)"
+    },
+    "bricks": {
+        "x": 0,
+        "y": 0,
+        "columns": 210,
+        "rows": 15,
+        "tiles": [
+            {"row": 10, "column": 20, "type": 0, "repeat": 2}
+        ],
+        "||Type Comment||": "type => 0: normal brick, 1: coin brick, 2: mushroom treasure brick, 3: weapons treasure brick, 4: invincible treasure brick, 5: invisible brick(only can be touched by bottom), 6: rock brick",
+        "||Repeat Comment||": "repeat => repeat draw tile"
+    },
+    "clouds": {
+        
+    },
+    "grass": {
+        
+    },
+    "tubes": {
+        
+    },
+    "enemies": {
+        
+    }
 }

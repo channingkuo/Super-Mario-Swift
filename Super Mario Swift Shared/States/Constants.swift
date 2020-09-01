@@ -6,7 +6,7 @@
 //  Copyright © 2020 Channing Kuo. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
 
 class Constants {
     
@@ -28,4 +28,6 @@ class Constants {
     
     // Chalkboard SE Regular, Tsukushi A Round Gothic Bold
     public static let FONT: String = "Chalkboard SE Regular"
+    
+    public static let BACKGROUND_COLOR: NSColor = NSColor(red: 125 / 255, green: 115 / 255, blue: 249 / 255, alpha: 1)
 }

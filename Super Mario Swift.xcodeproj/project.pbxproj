@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D704BEC524F6B6A400F8AD9B /* LoadingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D704BEC424F6B6A400F8AD9B /* LoadingScene.sks */; };
 		D704BEC624F6B6A400F8AD9B /* LoadingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D704BEC424F6B6A400F8AD9B /* LoadingScene.sks */; };
+		D712CAE624FE90F000BDCE40 /* BrickTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = D712CAE424FE90F000BDCE40 /* BrickTileSet.sks */; };
+		D712CAE724FE90F000BDCE40 /* BrickTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = D712CAE424FE90F000BDCE40 /* BrickTileSet.sks */; };
 		D72F9A4C24E2C540003F2DDD /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A4B24E2C540003F2DDD /* MainMenu.swift */; };
 		D72F9A4D24E2C540003F2DDD /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A4B24E2C540003F2DDD /* MainMenu.swift */; };
 		D72F9A4F24E2C558003F2DDD /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F9A4E24E2C558003F2DDD /* LoadingScene.swift */; };
@@ -45,8 +47,6 @@
 		D72F9AC724E2C785003F2DDD /* level_1_3.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC124E2C785003F2DDD /* level_1_3.json */; };
 		D72F9AC824E2C785003F2DDD /* level_1_4.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC224E2C785003F2DDD /* level_1_4.json */; };
 		D72F9AC924E2C785003F2DDD /* level_1_4.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC224E2C785003F2DDD /* level_1_4.json */; };
-		D72F9ACA24E2C785003F2DDD /* level_1_1_test.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC324E2C785003F2DDD /* level_1_1_test.json */; };
-		D72F9ACB24E2C785003F2DDD /* level_1_1_test.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9AC324E2C785003F2DDD /* level_1_1_test.json */; };
 		D72F9ACF24E2C78E003F2DDD /* luigi.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9ACD24E2C78E003F2DDD /* luigi.json */; };
 		D72F9AD024E2C78E003F2DDD /* luigi.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9ACD24E2C78E003F2DDD /* luigi.json */; };
 		D72F9AD124E2C78E003F2DDD /* mario.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9ACE24E2C78E003F2DDD /* mario.json */; };
@@ -87,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		D704BEC424F6B6A400F8AD9B /* LoadingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoadingScene.sks; sourceTree = "<group>"; };
+		D712CAE424FE90F000BDCE40 /* BrickTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BrickTileSet.sks; sourceTree = "<group>"; };
 		D72F9A4B24E2C540003F2DDD /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		D72F9A4E24E2C558003F2DDD /* LoadingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
 		D72F9A5124E2C57D003F2DDD /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
@@ -105,7 +106,6 @@
 		D72F9AC024E2C785003F2DDD /* level_1_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_2.json; sourceTree = "<group>"; };
 		D72F9AC124E2C785003F2DDD /* level_1_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_3.json; sourceTree = "<group>"; };
 		D72F9AC224E2C785003F2DDD /* level_1_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_4.json; sourceTree = "<group>"; };
-		D72F9AC324E2C785003F2DDD /* level_1_1_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_1_test.json; sourceTree = "<group>"; };
 		D72F9ACD24E2C78E003F2DDD /* luigi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = luigi.json; sourceTree = "<group>"; };
 		D72F9ACE24E2C78E003F2DDD /* mario.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mario.json; sourceTree = "<group>"; };
 		D7382B4D24EB9292001AEA5C /* Level_1_1Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_1_1Scene.swift; sourceTree = "<group>"; };
@@ -168,6 +168,7 @@
 				D72CD37A24E580B8007F8647 /* Demo */,
 				D72F9A6024E2C699003F2DDD /* Box.swift */,
 				D72F9A6324E2C6B0003F2DDD /* Brick.swift */,
+				D712CAE424FE90F000BDCE40 /* BrickTileSet.sks */,
 				D756404624F68AAC00A43518 /* GroundBrickTileSet.sks */,
 				D72F9A6624E2C6BD003F2DDD /* Coin.swift */,
 				D72F9A6924E2C6D1003F2DDD /* Enemy.swift */,
@@ -213,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				D7D5907824FAA4A000B08A06 /* level_1_1.json */,
-				D72F9AC324E2C785003F2DDD /* level_1_1_test.json */,
 				D72F9AC024E2C785003F2DDD /* level_1_2.json */,
 				D72F9AC124E2C785003F2DDD /* level_1_3.json */,
 				D72F9AC224E2C785003F2DDD /* level_1_4.json */,
@@ -368,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D712CAE624FE90F000BDCE40 /* BrickTileSet.sks in Resources */,
 				D7E7D5D824E295F8006511BB /* GameScene.sks in Resources */,
 				D7E7D5C324E295F8006511BB /* Main.storyboard in Resources */,
 				D72F9ACF24E2C78E003F2DDD /* luigi.json in Resources */,
@@ -379,7 +380,6 @@
 				D72F9AC824E2C785003F2DDD /* level_1_4.json in Resources */,
 				D72F9AC624E2C785003F2DDD /* level_1_3.json in Resources */,
 				D7E7D5C624E295F8006511BB /* LaunchScreen.storyboard in Resources */,
-				D72F9ACA24E2C785003F2DDD /* level_1_1_test.json in Resources */,
 				D7E7D5DC24E295F8006511BB /* Assets.xcassets in Resources */,
 				D756404824F68AAC00A43518 /* GroundBrickTileSet.sks in Resources */,
 				D7D5907924FAA4A000B08A06 /* level_1_1.json in Resources */,
@@ -395,6 +395,7 @@
 				D7E7D5D924E295F8006511BB /* GameScene.sks in Resources */,
 				D72F9AD224E2C78E003F2DDD /* mario.json in Resources */,
 				D72F9AC724E2C785003F2DDD /* level_1_3.json in Resources */,
+				D712CAE724FE90F000BDCE40 /* BrickTileSet.sks in Resources */,
 				D72F9AD024E2C78E003F2DDD /* luigi.json in Resources */,
 				D704BEC624F6B6A400F8AD9B /* LoadingScene.sks in Resources */,
 				D72F9AC524E2C785003F2DDD /* level_1_2.json in Resources */,
@@ -403,7 +404,6 @@
 				D756404924F68AAC00A43518 /* GroundBrickTileSet.sks in Resources */,
 				D7E7D5DD24E295F8006511BB /* Assets.xcassets in Resources */,
 				D7E7D5D724E295F8006511BB /* Actions.sks in Resources */,
-				D72F9ACB24E2C785003F2DDD /* level_1_1_test.json in Resources */,
 				D72F9AC924E2C785003F2DDD /* level_1_4.json in Resources */,
 				D7588CA124F3E7C0009E5FBF /* TitleScene.sks in Resources */,
 			);

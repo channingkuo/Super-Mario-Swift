@@ -7,17 +7,18 @@
 //
 
 import SpriteKit
+import SwiftyJSON
 
 class Map: SKScene {
     
-    fileprivate var mapDictionary: NSDictionary = NSDictionary()
+    fileprivate var mapJson: JSON = JSON()
     
     fileprivate var cameraNode: SKCameraNode = SKCameraNode.init()
     
     init(level: String, size: CGSize) {
         super.init(size: size)
         
-        self.mapDictionary = Tools.openJsonFile(level)
+        mapJson = Tools.openMapFile(level)
         
         // TODO record the level
     }
@@ -27,77 +28,44 @@ class Map: SKScene {
     }
     
     override func didMove(to view: SKView) {
-        // camera
-        self.cameraNode.position = CGPoint(x: Constants.W_SCREEN / 2, y: Constants.H_SCREEN / 2)
-        self.camera = self.cameraNode
-        
-        
-        let map = elementValue(element: self.mapDictionary, forKey: "map", type: NSDictionary.self)
-        let identity = elementValue(element: map, forKey: "identity", type: NSDictionary.self)
-
-        let col = elementValue(element: map, forKey: "col", type: CGFloat.self)
-        let row = elementValue(element: map, forKey: "row", type: CGFloat.self)
-        let baseWidth = elementValue(element: identity, forKey: "width", type: CGFloat.self)
-        let baseHeight = elementValue(element: identity, forKey: "height", type: CGFloat.self)
-
         self.size = CGSize(width: Constants.W_SCREEN, height: Constants.H_SCREEN)
+        self.backgroundColor = Constants.BACKGROUND_COLOR
         self.scaleMode = .aspectFill
         
-
-        guard let groundBrickTileSet = SKTileSet(named: "GroundBrickTileSet") else {
-          fatalError("GroundBrickTileSet Tile Set not found")
-        }
+        // camera
+        cameraNode.position = CGPoint(x: Constants.W_SCREEN / 2, y: Constants.H_SCREEN / 2)
+        self.camera = cameraNode
         
-        let columns = Int(ceil(col))
-        let rows = Int(ceil(row))
         
-        let tileMap = SKTileMapNode(tileSet: groundBrickTileSet, columns: columns, rows: rows, tileSize: CGSize(width: baseWidth, height: baseHeight))
-        tileMap.position = CGPoint(x: 0, y: 0)
-        tileMap.anchorPoint = CGPoint(x: 0, y: 0)
-        self.addChild(tileMap)
+        let map: JSON = mapJson["map"]
+        let tileWidth = map["size"].arrayValue[0].doubleValue
+        let tileHeight = map["size"].arrayValue[1].doubleValue
         
-        let groundBrickTileGroup = groundBrickTileSet.tileGroups
+        let tileSize = CGSize(width: tileWidth, height: tileHeight)
         
-        guard let groundBrickTile = groundBrickTileGroup.first(where: {$0.name == "CenterBrick"}) else {
-            fatalError("No GroundBrick Group found")
-        }
         
-        guard let groundUpperEdgeBrickTile = groundBrickTileGroup.first(where: {$0.name == "UpperEdgeBrick"}) else {
-            fatalError("No UpperEdgeBrick Group found")
-        }
+        let ground: JSON = mapJson["ground"]
         
-        let ground = elementValue(element: self.mapDictionary, forKey: "ground", type: NSArray.self)
-        // 计算ground镂空部分
-        var fallColums: [Int] = [Int]()
-        for item in ground {
-            let itemDic = item as! NSDictionary
-            let colValue = elementValue(element: itemDic, forKey: "col", type: Int.self)
-            let stepValue = elementValue(element: itemDic, forKey: "step", type: Int.self)
-            for index in 1...stepValue {
-                fallColums.append(colValue + index - 1)
-            }
-        }
+        // ground
+        let groundMap = Tools.drawGroundMap(ground, tileSize: tileSize)
+        self.addChild(groundMap)
         
-        // 动态绘制地板瓦片精灵
-        for row in 0...1 {
-            if row == 0 {
-                tileMap.tileSize = CGSize(width: 55, height: 39)
-            }
-            for col in 0...columns {
-                if fallColums.contains(col) {
-                    continue
-                }
-                tileMap.setTileGroup(row == 0 ? groundUpperEdgeBrickTile : groundBrickTile, forColumn: col, row: row)
-            }
-        }
+        
+        let brick: JSON = mapJson["bricks"]
+        
+        // brick
+        let brickMap = Tools.drawBrickMap(brick, tileSize: tileSize)
+        self.addChild(brickMap)
+        
+        
+//        let clouds: JSON = mapJson["clouds"]
+//        let grass: JSON = mapJson["grass"]
+//        let tubes: JSON = mapJson["tubes"]
+//        let enemies: JSON = mapJson["enemies"]
     }
     
     override func update(_ currentTime: TimeInterval) {
         
-    }
-    
-    func elementValue<T>(element: NSDictionary, forKey key: String, type: T.Type) -> T {
-        return element.value(forKey: key) as! T
     }
     
     class func nextScene() -> SKScene {
@@ -111,11 +79,12 @@ extension Map {
         let key = event.characters!.lowercased()
         switch key {
         case Constants.BUTTON_LEFT:
+            self.cameraNode.position.x -= 100
             break
         case Constants.BUTTON_DOWN:
             break
         case Constants.BUTTON_RIGHT:
-            self.cameraNode.position.x += 10
+            self.cameraNode.position.x += 100
             break
         case Constants.BUTTON_UP:
             break
