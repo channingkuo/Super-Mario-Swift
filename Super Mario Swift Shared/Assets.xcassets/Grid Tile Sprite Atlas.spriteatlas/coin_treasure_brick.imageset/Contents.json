@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "normal_brick.png",
+      "filename" : "coin_treasure_brick.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "normal_brick@2x.png",
+      "filename" : "coin_treasure_brick@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "normal_brick@3x.png",
+      "filename" : "coin_treasure_brick@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

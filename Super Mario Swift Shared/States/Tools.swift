@@ -83,11 +83,26 @@ class Tools {
         guard let normalBrickGroup = brickTileGroup.first(where: {$0.name == "NormalBrickGroup"}) else {
             fatalError("No NormalBrickGroup found")
         }
+        
+        guard let coinTreasureBrickGroup = brickTileGroup.first(where: {$0.name == "CoinTreasureBrickGroup"}) else {
+            fatalError("No CoinTreasureBrickGroup found")
+        }
+        
+        let groups = [normalBrickGroup, normalBrickGroup, coinTreasureBrickGroup, coinTreasureBrickGroup, coinTreasureBrickGroup, normalBrickGroup, normalBrickGroup, normalBrickGroup]
 
         // draw brick tile sprites
-        // TODO 处理不同类型的brick
         for item in brick["tiles"].arrayValue {
-            brickMap.setTileGroup(normalBrickGroup, forColumn: item["column"].intValue, row: item["row"].intValue)
+            let step = item["repeat"].intValue
+            let column = item["column"].intValue
+            let row = item["row"].intValue
+            let type = item["type"].intValue
+            if step > 1 {
+                for index in 0...step - 1 {
+                    brickMap.setTileGroup(groups[type], forColumn: column + index, row: row)
+                }
+            } else {
+                brickMap.setTileGroup(groups[type], forColumn: column, row: row)
+            }
         }
         
         return brickMap
