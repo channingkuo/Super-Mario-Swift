@@ -1,0 +1,83 @@
+{
+    "map": {
+        "columns": 210,
+        "rows": 15,
+        "size": [55, 48]
+    },
+    "ground": {
+        "x": 0,
+        "y": -9,
+        "columns": 210,
+        "rows": 2,
+        "tiles": [
+            {"row": 0, "column": 69, "repeat": 2},
+            {"row": 0, "column": 86, "repeat": 3},
+            {"row": 0, "column": 153, "repeat": 2},
+            {"row": 1, "column": 69, "repeat": 2},
+            {"row": 1, "column": 86, "repeat": 3},
+            {"row": 1, "column": 153, "repeat": 2}
+        ],
+        "||Repeat Comment||": "repeat => repeat use transparency tile when position in (row, column)"
+    },
+    "bricks": {
+        "x": 0,
+        "y": -15,
+        "columns": 210,
+        "rows": 15,
+        "tiles": [
+            {"row": 5, "column": 16, "type": 2, "repeat": 1},
+            {"row": 5, "column": 20, "type": 0, "repeat": 1},
+            {"row": 5, "column": 21, "type": 2, "repeat": 1},
+            {"row": 5, "column": 22, "type": 0, "repeat": 1},
+            {"row": 5, "column": 23, "type": 2, "repeat": 1},
+            {"row": 5, "column": 24, "type": 0, "repeat": 1},
+            {"row": 9, "column": 22, "type": 2, "repeat": 1},
+            
+            {"row": 5, "column": 77, "type": 0, "repeat": 1},
+            {"row": 5, "column": 78, "type": 2, "repeat": 1},
+            {"row": 5, "column": 79, "type": 0, "repeat": 1},
+            {"row": 9, "column": 80, "type": 0, "repeat": 8},
+            
+            {"row": 5, "column": 94, "type": 1, "repeat": 1},
+            {"row": 9, "column": 91, "type": 0, "repeat": 3},
+            {"row": 9, "column": 94, "type": 2, "repeat": 1},
+            
+            {"row": 5, "column": 100, "type": 0, "repeat": 1},
+            {"row": 5, "column": 101, "type": 5, "repeat": 1},
+            {"row": 5, "column": 106, "type": 2, "repeat": 1},
+            {"row": 5, "column": 109, "type": 2, "repeat": 1},
+            {"row": 5, "column": 112, "type": 2, "repeat": 1},
+            {"row": 9, "column": 109, "type": 2, "repeat": 1},
+            
+            {"row": 5, "column": 119, "type": 0, "repeat": 1},
+            {"row": 9, "column": 122, "type": 0, "repeat": 3},
+            
+            {"row": 5, "column": 130, "type": 0, "repeat": 2},
+            {"row": 9, "column": 129, "type": 0, "repeat": 1},
+            {"row": 9, "column": 130, "type": 2, "repeat": 2},
+            {"row": 9, "column": 132, "type": 0, "repeat": 1},
+            
+            {"row": 5, "column": 167, "type": 0, "repeat": 2},
+            {"row": 5, "column": 169, "type": 2, "repeat": 1},
+            {"row": 5, "column": 170, "type": 0, "repeat": 1}
+        ],
+        "||Type Comment||": "type => 0: normal brick, 1: coin brick, 2: coin treasure brick, 3: mushroom treasure brick, 4: weapons treasure brick, 5: invincible treasure brick, 6: invisible brick(only can be touched by bottom), 7: rock brick",
+        "||Repeat Comment||": "repeat => repeat draw tile",
+        "||TODO||": "invisible brick not included"
+    },
+    "coins": {
+        
+    },
+    "clouds": {
+        
+    },
+    "grass": {
+        
+    },
+    "tubes": {
+        
+    },
+    "enemies": {
+        
+    }
+}

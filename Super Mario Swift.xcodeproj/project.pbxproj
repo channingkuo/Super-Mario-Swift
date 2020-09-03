@@ -61,6 +61,8 @@
 		D7588CA124F3E7C0009E5FBF /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */; };
 		D777CF4324E6562400C82215 /* GameStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777CF4224E6562400C82215 /* GameStatesEnum.swift */; };
 		D777CF4424E6562400C82215 /* GameStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777CF4224E6562400C82215 /* GameStatesEnum.swift */; };
+		D7D0D5ED2500B500002ED9EA /* PlayerStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0D5EC2500B500002ED9EA /* PlayerStatesEnum.swift */; };
+		D7D0D5EE2500B500002ED9EA /* PlayerStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0D5EC2500B500002ED9EA /* PlayerStatesEnum.swift */; };
 		D7D5907624FA30C300B08A06 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5907524FA30C300B08A06 /* Map.swift */; };
 		D7D5907724FA30C300B08A06 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5907524FA30C300B08A06 /* Map.swift */; };
 		D7D5907924FAA4A000B08A06 /* level_1_1.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D5907824FAA4A000B08A06 /* level_1_1.json */; };
@@ -113,6 +115,7 @@
 		D757FD1824F41451002B6FD0 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
 		D777CF4224E6562400C82215 /* GameStatesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatesEnum.swift; sourceTree = "<group>"; };
+		D7D0D5EC2500B500002ED9EA /* PlayerStatesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatesEnum.swift; sourceTree = "<group>"; };
 		D7D5907524FA30C300B08A06 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		D7D5907824FAA4A000B08A06 /* level_1_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_1.json; sourceTree = "<group>"; };
 		D7E7D5B224E295F6006511BB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -166,15 +169,13 @@
 			isa = PBXGroup;
 			children = (
 				D72CD37A24E580B8007F8647 /* Demo */,
+				D7D0D5F02500B656002ED9EA /* Scenes */,
+				D7D0D5EF2500B5DD002ED9EA /* TileSets */,
 				D72F9A6024E2C699003F2DDD /* Box.swift */,
 				D72F9A6324E2C6B0003F2DDD /* Brick.swift */,
-				D712CAE424FE90F000BDCE40 /* BrickTileSet.sks */,
-				D756404624F68AAC00A43518 /* GroundBrickTileSet.sks */,
 				D72F9A6624E2C6BD003F2DDD /* Coin.swift */,
 				D72F9A6924E2C6D1003F2DDD /* Enemy.swift */,
-				D7E7D5E624E296EA006511BB /* Level_1_1.sks */,
 				D7382B4D24EB9292001AEA5C /* Level_1_1Scene.swift */,
-				D704BEC424F6B6A400F8AD9B /* LoadingScene.sks */,
 				D72F9A4E24E2C558003F2DDD /* LoadingScene.swift */,
 				D72F9A4B24E2C540003F2DDD /* MainMenu.swift */,
 				D7D5907524FA30C300B08A06 /* Map.swift */,
@@ -182,7 +183,6 @@
 				D72F9A6F24E2C6EE003F2DDD /* PowerUp.swift */,
 				D72F9A5724E2C5AD003F2DDD /* Sound.swift */,
 				D72F9A7224E2C706003F2DDD /* Stuff.swift */,
-				D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */,
 				D757FD1824F41451002B6FD0 /* TitleScene.swift */,
 			);
 			path = Components;
@@ -191,8 +191,8 @@
 		D72F9A4524E2C3BA003F2DDD /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D72F9ABF24E2C785003F2DDD /* maps */,
-				D72F9ACC24E2C78E003F2DDD /* player */,
+				D72F9ABF24E2C785003F2DDD /* Maps */,
+				D72F9ACC24E2C78E003F2DDD /* Player */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -200,17 +200,13 @@
 		D72F9A4624E2C3CA003F2DDD /* States */ = {
 			isa = PBXGroup;
 			children = (
-				D72F9A5424E2C598003F2DDD /* Constants.swift */,
 				D777CF4224E6562400C82215 /* GameStatesEnum.swift */,
-				D72F9A7524E2C712003F2DDD /* Info.swift */,
-				D72F9A5124E2C57D003F2DDD /* Level.swift */,
-				D72F9A5A24E2C5E7003F2DDD /* Setup.swift */,
-				D72F9A5D24E2C602003F2DDD /* Tools.swift */,
+				D7D0D5EC2500B500002ED9EA /* PlayerStatesEnum.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
 		};
-		D72F9ABF24E2C785003F2DDD /* maps */ = {
+		D72F9ABF24E2C785003F2DDD /* Maps */ = {
 			isa = PBXGroup;
 			children = (
 				D7D5907824FAA4A000B08A06 /* level_1_1.json */,
@@ -218,16 +214,47 @@
 				D72F9AC124E2C785003F2DDD /* level_1_3.json */,
 				D72F9AC224E2C785003F2DDD /* level_1_4.json */,
 			);
-			path = maps;
+			path = Maps;
 			sourceTree = "<group>";
 		};
-		D72F9ACC24E2C78E003F2DDD /* player */ = {
+		D72F9ACC24E2C78E003F2DDD /* Player */ = {
 			isa = PBXGroup;
 			children = (
 				D72F9ACD24E2C78E003F2DDD /* luigi.json */,
 				D72F9ACE24E2C78E003F2DDD /* mario.json */,
 			);
-			path = player;
+			path = Player;
+			sourceTree = "<group>";
+		};
+		D7D0D5EF2500B5DD002ED9EA /* TileSets */ = {
+			isa = PBXGroup;
+			children = (
+				D712CAE424FE90F000BDCE40 /* BrickTileSet.sks */,
+				D756404624F68AAC00A43518 /* GroundBrickTileSet.sks */,
+			);
+			path = TileSets;
+			sourceTree = "<group>";
+		};
+		D7D0D5F02500B656002ED9EA /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D7E7D5E624E296EA006511BB /* Level_1_1.sks */,
+				D704BEC424F6B6A400F8AD9B /* LoadingScene.sks */,
+				D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D7D0D5F12500B715002ED9EA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D72F9A5424E2C598003F2DDD /* Constants.swift */,
+				D72F9A5124E2C57D003F2DDD /* Level.swift */,
+				D72F9A7524E2C712003F2DDD /* Info.swift */,
+				D72F9A5A24E2C5E7003F2DDD /* Setup.swift */,
+				D72F9A5D24E2C602003F2DDD /* Tools.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		D7E7D5AC24E295F6006511BB = {
@@ -245,8 +272,9 @@
 			children = (
 				D7E7D5B524E295F8006511BB /* Assets.xcassets */,
 				D72F9A4424E2C3A5003F2DDD /* Components */,
-				D72F9A4624E2C3CA003F2DDD /* States */,
 				D72F9A4524E2C3BA003F2DDD /* Data */,
+				D72F9A4624E2C3CA003F2DDD /* States */,
+				D7D0D5F12500B715002ED9EA /* Utils */,
 			);
 			path = "Super Mario Swift Shared";
 			sourceTree = "<group>";
@@ -434,6 +462,7 @@
 				D7E7D5BE24E295F8006511BB /* AppDelegate.swift in Sources */,
 				D72F9A5B24E2C5E7003F2DDD /* Setup.swift in Sources */,
 				D72F9A5824E2C5AD003F2DDD /* Sound.swift in Sources */,
+				D7D0D5ED2500B500002ED9EA /* PlayerStatesEnum.swift in Sources */,
 				D7D5907624FA30C300B08A06 /* Map.swift in Sources */,
 				D777CF4324E6562400C82215 /* GameStatesEnum.swift in Sources */,
 				D72F9A6D24E2C6E0003F2DDD /* Player.swift in Sources */,
@@ -463,6 +492,7 @@
 				D7E7D5CF24E295F8006511BB /* AppDelegate.swift in Sources */,
 				D72F9A5C24E2C5E7003F2DDD /* Setup.swift in Sources */,
 				D72F9A5924E2C5AD003F2DDD /* Sound.swift in Sources */,
+				D7D0D5EE2500B500002ED9EA /* PlayerStatesEnum.swift in Sources */,
 				D7D5907724FA30C300B08A06 /* Map.swift in Sources */,
 				D777CF4424E6562400C82215 /* GameStatesEnum.swift in Sources */,
 				D72F9A6E24E2C6E0003F2DDD /* Player.swift in Sources */,

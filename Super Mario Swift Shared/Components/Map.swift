@@ -14,6 +14,7 @@ class Map: SKScene {
     fileprivate var mapJson: JSON = JSON()
     
     fileprivate var cameraNode: SKCameraNode = SKCameraNode.init()
+    fileprivate var player: Player!
     
     init(level: String, size: CGSize) {
         super.init(size: size)
@@ -35,6 +36,10 @@ class Map: SKScene {
         // camera
         cameraNode.position = CGPoint(x: Constants.W_SCREEN / 2, y: Constants.H_SCREEN / 2)
         self.camera = cameraNode
+        
+        // player
+        player = Player.buildPlayer()
+        self.addChild(player)
         
         
         let map: JSON = mapJson["map"]
@@ -79,12 +84,12 @@ extension Map {
         let key = event.characters!.lowercased()
         switch key {
         case Constants.BUTTON_LEFT:
-            self.cameraNode.position.x -= 100
+            self.player.position.x -= 100
             break
         case Constants.BUTTON_DOWN:
             break
         case Constants.BUTTON_RIGHT:
-            self.cameraNode.position.x += 100
+            self.player.position.x += 100
             break
         case Constants.BUTTON_UP:
             break
