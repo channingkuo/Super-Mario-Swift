@@ -55,6 +55,8 @@ class Tools {
                 }
             }
         }
+        
+        bluffColums.sort()
 
         // draw ground tile sprites skip bluff brick
         for row in 0...ground["rows"].intValue - 1 {
@@ -65,6 +67,33 @@ class Tools {
                 groundMap.setTileGroup(centerBrickGroup, forColumn: col, row: row)
             }
         }
+        
+        // physicsBodies
+        var frame = groundMap.frame
+        frame.size.height -= 12
+        
+        var physicsBodies = [SKPhysicsBody]()
+        
+        var start: Int = 0
+        for index in bluffColums {
+            if index - start > 1 {
+                let from = CGPoint(x: CGFloat(start) * tileSize.width, y: frame.height)
+                let to = CGPoint(x: CGFloat(index - 1) * tileSize.width, y: frame.height)
+                let physicsBody = SKPhysicsBody(edgeFrom: from, to: to)
+                physicsBodies.append(physicsBody)
+                
+                start = index
+            } else {
+                start = index + 1
+            }
+        }
+        let from = CGPoint(x: CGFloat(start) * tileSize.width, y: frame.height)
+        let to = CGPoint(x: CGFloat(ground["columns"].intValue) * tileSize.width, y: frame.height)
+        let physicsBody = SKPhysicsBody(edgeFrom: from, to: to)
+        physicsBodies.append(physicsBody)
+        
+        groundMap.physicsBody = SKPhysicsBody(bodies: physicsBodies)
+        groundMap.physicsBody!.pinned = true
         
         return groundMap
     }

@@ -16,9 +16,10 @@ class Player: SKSpriteNode {
         super.init(texture: texture, color: .black, size: texture!.size())
         
         self.texture = texture
-        self.position = CGPoint(x: 100, y: 100)
+        self.position = CGPoint(x: 0, y: 200)
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.physicsBody = SKPhysicsBody(texture: texture!, size: texture!.size())
+        self.physicsBody!.allowsRotation = false
         self.zPosition = 10000
         
         state = .stand

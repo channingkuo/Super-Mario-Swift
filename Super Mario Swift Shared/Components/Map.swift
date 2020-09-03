@@ -73,6 +73,17 @@ class Map: SKScene {
         
     }
     
+    func makeSpinny(at pos: CGPoint) {
+        print(pos)
+        let testNode = Player.buildPlayer()
+        testNode.position = pos
+        self.addChild(testNode)
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        makeSpinny(at: event.location(in: self))
+    }
+    
     class func nextScene() -> SKScene {
         return Map.init(level: "level_\(Level(level: Info.gameLevel).nextLevel)", size: CGSize(width: Constants.W_SCREEN, height: Constants.H_SCREEN))
     }
@@ -84,14 +95,17 @@ extension Map {
         let key = event.characters!.lowercased()
         switch key {
         case Constants.BUTTON_LEFT:
-            self.player.position.x -= 100
+            self.player.position.x -= 55
+            self.cameraNode.position.x -= 55
             break
         case Constants.BUTTON_DOWN:
             break
         case Constants.BUTTON_RIGHT:
-            self.player.position.x += 100
+            self.player.position.x += 55
+            self.cameraNode.position.x += 55
             break
         case Constants.BUTTON_UP:
+            self.player.position.y += 100
             break
         default:
             break
