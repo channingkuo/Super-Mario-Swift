@@ -69,10 +69,6 @@ class Map: SKScene {
 //        let enemies: JSON = mapJson["enemies"]
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        
-    }
-    
     func makeSpinny(at pos: CGPoint) {
         print(pos)
         let testNode = Player.buildPlayer()
@@ -80,15 +76,14 @@ class Map: SKScene {
         self.addChild(testNode)
     }
     
-    override func mouseDown(with event: NSEvent) {
-        makeSpinny(at: event.location(in: self))
-    }
+    
     
     class func nextScene() -> SKScene {
         return Map.init(level: "level_\(Level(level: Info.gameLevel).nextLevel)", size: CGSize(width: Constants.W_SCREEN, height: Constants.H_SCREEN))
     }
 }
 
+// MARK Game Action
 extension Map {
 
     override func keyDown(with event: NSEvent) {
@@ -111,5 +106,17 @@ extension Map {
             break
         }
     }
+    
+    override func mouseDown(with event: NSEvent) {
+        makeSpinny(at: event.location(in: self))
+    }
 }
 
+// MARK Game loop
+extension Map {
+    
+    override func update(_ currentTime: TimeInterval) {
+        guard let player = player else { return }
+        player.update(currentTime)
+    }
+}

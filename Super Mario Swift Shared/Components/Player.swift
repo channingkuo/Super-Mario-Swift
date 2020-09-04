@@ -12,6 +12,8 @@ class Player: SKSpriteNode {
     
     fileprivate var state: PlayerStatesEnum!
     
+    fileprivate var previousTimeInterval: TimeInterval = 0
+    
     init(texture: SKTexture?) {
         super.init(texture: texture, color: .black, size: texture!.size())
         
@@ -27,6 +29,20 @@ class Player: SKSpriteNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func update(_ currentTime: TimeInterval) {
+        let deltaTime = currentTime - previousTimeInterval
+        previousTimeInterval = currentTime
+        
+        // player's velocity
+        // player's accelerated velocity
+        // calculate player's position
+    }
+    
+    private func calculateVelocity() -> CGFloat {
+        
+        return 0
     }
     
     
