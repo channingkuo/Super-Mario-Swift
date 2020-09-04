@@ -16,6 +16,8 @@ class Map: SKScene {
     fileprivate var cameraNode: SKCameraNode = SKCameraNode.init()
     fileprivate var player: Player!
     
+    fileprivate var playerAction = false
+    
     init(level: String, size: CGSize) {
         super.init(size: size)
         
@@ -92,6 +94,13 @@ class Map: SKScene {
 extension Map {
 
     override func keyDown(with event: NSEvent) {
+        
+        if !playerAction {
+            return
+        }
+        
+        let position = event.location(in: player)
+        
         let key = event.characters!.lowercased()
         switch key {
         case Constants.BUTTON_LEFT:
