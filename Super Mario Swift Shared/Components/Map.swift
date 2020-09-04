@@ -16,6 +16,8 @@ class Map: SKScene {
     fileprivate var cameraNode: SKCameraNode = SKCameraNode.init()
     fileprivate var player: Player!
     
+    fileprivate var playerAction = false
+    
     init(level: String, size: CGSize) {
         super.init(size: size)
         
@@ -76,8 +78,6 @@ class Map: SKScene {
         self.addChild(testNode)
     }
     
-    
-    
     class func nextScene() -> SKScene {
         return Map.init(level: "level_\(Level(level: Info.gameLevel).nextLevel)", size: CGSize(width: Constants.W_SCREEN, height: Constants.H_SCREEN))
     }
@@ -87,6 +87,11 @@ class Map: SKScene {
 extension Map {
 
     override func keyDown(with event: NSEvent) {
+        
+        if !playerAction { return }
+        
+        let position = event.location(in: player)
+        
         let key = event.characters!.lowercased()
         switch key {
         case Constants.BUTTON_LEFT:
