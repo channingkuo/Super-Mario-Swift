@@ -13,7 +13,6 @@ class Constants {
     public static let BUTTON_LEFT: String = "a"
     public static let BUTTON_DOWN: String = "s"
     public static let BUTTON_RIGHT: String = "d"
-    public static let BUTTON_UP: String = "w"
     public static let BUTTON_X: String = "i"
     public static let BUTTON_Y: String = "o"
     public static let BUTTON_A: String = "j"

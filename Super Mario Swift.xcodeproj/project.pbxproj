@@ -53,6 +53,10 @@
 		D72F9AD224E2C78E003F2DDD /* mario.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F9ACE24E2C78E003F2DDD /* mario.json */; };
 		D7382B4E24EB9292001AEA5C /* Level_1_1Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7382B4D24EB9292001AEA5C /* Level_1_1Scene.swift */; };
 		D7382B4F24EB9292001AEA5C /* Level_1_1Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7382B4D24EB9292001AEA5C /* Level_1_1Scene.swift */; };
+		D750015825027E70001BE37A /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D750015725027E70001BE37A /* Velocity.swift */; };
+		D750015925027E70001BE37A /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D750015725027E70001BE37A /* Velocity.swift */; };
+		D750015B250297E9001BE37A /* PlayerStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D750015A250297E9001BE37A /* PlayerStateMachine.swift */; };
+		D750015C250297E9001BE37A /* PlayerStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D750015A250297E9001BE37A /* PlayerStateMachine.swift */; };
 		D756404824F68AAC00A43518 /* GroundBrickTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = D756404624F68AAC00A43518 /* GroundBrickTileSet.sks */; };
 		D756404924F68AAC00A43518 /* GroundBrickTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = D756404624F68AAC00A43518 /* GroundBrickTileSet.sks */; };
 		D757FD1924F41451002B6FD0 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757FD1824F41451002B6FD0 /* TitleScene.swift */; };
@@ -111,6 +115,8 @@
 		D72F9ACD24E2C78E003F2DDD /* luigi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = luigi.json; sourceTree = "<group>"; };
 		D72F9ACE24E2C78E003F2DDD /* mario.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mario.json; sourceTree = "<group>"; };
 		D7382B4D24EB9292001AEA5C /* Level_1_1Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_1_1Scene.swift; sourceTree = "<group>"; };
+		D750015725027E70001BE37A /* Velocity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Velocity.swift; sourceTree = "<group>"; };
+		D750015A250297E9001BE37A /* PlayerStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStateMachine.swift; sourceTree = "<group>"; };
 		D756404624F68AAC00A43518 /* GroundBrickTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GroundBrickTileSet.sks; sourceTree = "<group>"; };
 		D757FD1824F41451002B6FD0 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
@@ -180,10 +186,12 @@
 				D72F9A4B24E2C540003F2DDD /* MainMenu.swift */,
 				D7D5907524FA30C300B08A06 /* Map.swift */,
 				D72F9A6C24E2C6E0003F2DDD /* Player.swift */,
+				D750015A250297E9001BE37A /* PlayerStateMachine.swift */,
 				D72F9A6F24E2C6EE003F2DDD /* PowerUp.swift */,
 				D72F9A5724E2C5AD003F2DDD /* Sound.swift */,
 				D72F9A7224E2C706003F2DDD /* Stuff.swift */,
 				D757FD1824F41451002B6FD0 /* TitleScene.swift */,
+				D750015725027E70001BE37A /* Velocity.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -446,12 +454,14 @@
 			files = (
 				D72F9A7324E2C706003F2DDD /* Stuff.swift in Sources */,
 				D72F9A6A24E2C6D1003F2DDD /* Enemy.swift in Sources */,
+				D750015B250297E9001BE37A /* PlayerStateMachine.swift in Sources */,
 				D72F9A5224E2C57D003F2DDD /* Level.swift in Sources */,
 				D72F9A7624E2C712003F2DDD /* Info.swift in Sources */,
 				D72F9A4C24E2C540003F2DDD /* MainMenu.swift in Sources */,
 				D7382B4E24EB9292001AEA5C /* Level_1_1Scene.swift in Sources */,
 				D7E7D5DA24E295F8006511BB /* GameScene.swift in Sources */,
 				D7E7D5C024E295F8006511BB /* GameViewController.swift in Sources */,
+				D750015825027E70001BE37A /* Velocity.swift in Sources */,
 				D72F9A5524E2C598003F2DDD /* Constants.swift in Sources */,
 				D72F9A6424E2C6B0003F2DDD /* Brick.swift in Sources */,
 				D757FD1924F41451002B6FD0 /* TitleScene.swift in Sources */,
@@ -476,12 +486,14 @@
 			files = (
 				D72F9A7424E2C706003F2DDD /* Stuff.swift in Sources */,
 				D72F9A6B24E2C6D1003F2DDD /* Enemy.swift in Sources */,
+				D750015C250297E9001BE37A /* PlayerStateMachine.swift in Sources */,
 				D72F9A5324E2C57D003F2DDD /* Level.swift in Sources */,
 				D72F9A7724E2C712003F2DDD /* Info.swift in Sources */,
 				D72F9A4D24E2C540003F2DDD /* MainMenu.swift in Sources */,
 				D7382B4F24EB9292001AEA5C /* Level_1_1Scene.swift in Sources */,
 				D7E7D5DB24E295F8006511BB /* GameScene.swift in Sources */,
 				D7E7D5D124E295F8006511BB /* GameViewController.swift in Sources */,
+				D750015925027E70001BE37A /* Velocity.swift in Sources */,
 				D72F9A5624E2C598003F2DDD /* Constants.swift in Sources */,
 				D72F9A6524E2C6B0003F2DDD /* Brick.swift in Sources */,
 				D757FD1A24F41451002B6FD0 /* TitleScene.swift in Sources */,

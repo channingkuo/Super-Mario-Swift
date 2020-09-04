@@ -16,7 +16,7 @@ class Map: SKScene {
     fileprivate var cameraNode: SKCameraNode = SKCameraNode.init()
     fileprivate var player: Player!
     
-    fileprivate var playerAction = false
+//    fileprivate var playerAction = false
     
     init(level: String, size: CGSize) {
         super.init(size: size)
@@ -88,29 +88,21 @@ extension Map {
 
     override func keyDown(with event: NSEvent) {
         
-        if !playerAction { return }
+//        if !playerAction { return }
         
-        let position = event.location(in: player)
-        
+        guard let player = player else { return }
         let key = event.characters!.lowercased()
-        switch key {
-        case Constants.BUTTON_LEFT:
-            self.player.position.x -= 55
-            self.cameraNode.position.x -= 55
-            break
-        case Constants.BUTTON_DOWN:
-            break
-        case Constants.BUTTON_RIGHT:
-            self.player.position.x += 55
-            self.cameraNode.position.x += 55
-            break
-        case Constants.BUTTON_UP:
-            self.player.position.y += 100
-            break
-        default:
-            break
-        }
+        player.startAction(key)
     }
+    
+    override func keyUp(with event: NSEvent) {
+            
+    //        if !playerAction { return }
+            
+            guard let player = player else { return }
+            let key = event.characters!.lowercased()
+            player.endAction(key)
+        }
     
     override func mouseDown(with event: NSEvent) {
         makeSpinny(at: event.location(in: self))

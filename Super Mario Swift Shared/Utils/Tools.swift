@@ -69,16 +69,14 @@ class Tools {
         }
         
         // physicsBodies
-        var frame = groundMap.frame
-        frame.size.height -= 12
-        
+        let physicsHeight: CGFloat = 72
         var physicsBodies = [SKPhysicsBody]()
         
         var start: Int = 0
         for index in bluffColums {
             if index - start > 1 {
-                let from = CGPoint(x: CGFloat(start) * tileSize.width, y: frame.height)
-                let to = CGPoint(x: CGFloat(index - 1) * tileSize.width, y: frame.height)
+                let from = CGPoint(x: CGFloat(start) * tileSize.width, y: physicsHeight)
+                let to = CGPoint(x: CGFloat(index - 1) * tileSize.width, y: physicsHeight)
                 let physicsBody = SKPhysicsBody(edgeFrom: from, to: to)
                 physicsBodies.append(physicsBody)
                 
@@ -87,8 +85,8 @@ class Tools {
                 start = index + 1
             }
         }
-        let from = CGPoint(x: CGFloat(start) * tileSize.width, y: frame.height)
-        let to = CGPoint(x: CGFloat(ground["columns"].intValue) * tileSize.width, y: frame.height)
+        let from = CGPoint(x: CGFloat(start) * tileSize.width, y: physicsHeight)
+        let to = CGPoint(x: CGFloat(ground["columns"].intValue) * tileSize.width, y: physicsHeight)
         let physicsBody = SKPhysicsBody(edgeFrom: from, to: to)
         physicsBodies.append(physicsBody)
         
