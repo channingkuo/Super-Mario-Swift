@@ -37,7 +37,7 @@ class JumpingState: PlayerState {
         player.run(action, withKey: characterAnimationKey)
         
         hasFinishedJump = false
-        player.run(.move(by: CGVector(dx: 0.0, dy: 76), duration: 0.1))
+        player.run(.move(by: CGVector(dx: 0.0, dy: 110), duration: 0.1))
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) {(timer) in
             self.hasFinishedJump = true
@@ -85,7 +85,7 @@ class IdleState: PlayerState {
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         switch stateClass {
-        case is LandingState.Type, is JumpingState.Type, is SlowingState.Type:
+        case is LandingState.Type, is SlowingState.Type:
             return false
         default:
             return true
