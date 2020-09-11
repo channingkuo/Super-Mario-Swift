@@ -47,13 +47,7 @@ class Map: SKScene {
         self.camera = cameraNode
         
         // player
-        player = SKSpriteNode(imageNamed: "player_type_1_1")
-        player.position = CGPoint(x: 146, y: 85)
-        player.anchorPoint = CGPoint(x: 0, y: 0)
-        let physicsBody = SKPhysicsBody(rectangleOf: player.size)
-        physicsBody.allowsRotation = false
-        player.physicsBody = physicsBody
-        player.zPosition = 10000
+        player = Player.buildPlayer()
         self.addChild(player)
         
         playerStateMachine = GKStateMachine(states: [

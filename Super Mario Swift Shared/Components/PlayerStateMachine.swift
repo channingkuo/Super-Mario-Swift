@@ -29,7 +29,7 @@ class JumpingState: PlayerState {
         return true
     }
     
-    let texture: SKTexture = SKTexture(imageNamed: "player_type_2_1")
+    let texture: SKTexture = SKTexture(imageNamed: "player_type_1_6")
     lazy var action = { SKAction.animate(with: [texture], timePerFrame: 0.1) }()
     
     override func didEnter(from previousState: GKState?) {

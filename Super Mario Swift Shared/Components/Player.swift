@@ -38,7 +38,7 @@ class Player: SKSpriteNode {
         self.position = CGPoint(x: 146, y: 85)
         self.anchorPoint = CGPoint(x: 0, y: 0)
         
-        let physicsBody = SKPhysicsBody(rectangleOf: texture.size())
+        let physicsBody = SKPhysicsBody(rectangleOf: self.size)
         physicsBody.allowsRotation = false
         self.physicsBody = physicsBody
         self.zPosition = 10000
@@ -54,6 +54,8 @@ class Player: SKSpriteNode {
         ])
         
         playerStateMachine.enter(IdleState.self)
+        
+        print(self.size)
     }
     
     required init?(coder aDecoder: NSCoder) {
