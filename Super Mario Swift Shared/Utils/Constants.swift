@@ -29,4 +29,6 @@ class Constants {
     public static let FONT: String = "Chalkboard SE Regular"
     
     public static let BACKGROUND_COLOR: NSColor = NSColor(red: 125 / 255, green: 115 / 255, blue: 249 / 255, alpha: 1)
+    
+    public static let PLAYER_SCALE: CGFloat = 3.0625
 }
