@@ -15,15 +15,9 @@ class Map: SKScene {
     fileprivate var mapJson: JSON = JSON()
     
     fileprivate var cameraNode: SKCameraNode = SKCameraNode.init()
-    fileprivate var player: SKSpriteNode!
-    
-    fileprivate var previousTimeInterval: TimeInterval = 0
-    fileprivate var playerIsFacingRight = true
+    fileprivate var player: Player!
     
     fileprivate var playerStateMachine: GKStateMachine!
-    
-    var xVelocity: Double = 0
-    var yVelocity: Double = 0
     
     init(level: String, size: CGSize) {
         super.init(size: size)
@@ -103,55 +97,24 @@ class Map: SKScene {
 // MARK Game Action
 extension Map {
 
-    override func keyDown(with event: NSEvent) {
-        
-//        if !playerAction { return }
-        
+    override func keyDown(with event: NSEvent) {        
         guard let player = player else { return }
         let key = event.characters!.lowercased()
-        switch key {
-        case Constants.BUTTON_LEFT:
-            xVelocity = -5
-            playerStateMachine.enter(WalkingState.self)
-            break
-        case Constants.BUTTON_RIGHT:
-            xVelocity = 5
-            playerStateMachine.enter(WalkingState.self)
-            break
-        case Constants.BUTTON_DOWN:
-            // 下蹲，纹理变换Action
-            break
-        case Constants.BUTTON_A:
-            playerStateMachine.enter(JumpingState.self)
-            break
-        default:
-            break
+
+        if key == Constants.BUTTON_START {
+          // TODO 暂停、开始
+        } else {
+          player.keyDown(key)
         }
     }
     
     override func keyUp(with event: NSEvent) {
         guard let player = player else { return }
         let key = event.characters!.lowercased()
-        
-        if playerStateMachine.currentState! is WalkingState {
-            switch key {
-            case Constants.BUTTON_LEFT:
-                xVelocity = 0
-                playerStateMachine.enter(SlowingState.self)
-                break
-            case Constants.BUTTON_RIGHT:
-                xVelocity = 0
-                playerStateMachine.enter(SlowingState.self)
-                break
-            case Constants.BUTTON_DOWN:
-                // 下蹲，纹理变换Action
-                break
-            case Constants.BUTTON_A:
-                break
-            default:
-                break
-            }
-        }
+
+        if key == Constants.BUTTON_START { return }
+
+        player.keyUp(key)
     }
     
     override func mouseDown(with event: NSEvent) {
@@ -164,35 +127,7 @@ extension Map {
     
     override func update(_ currentTime: TimeInterval) {
         guard let player = player else { return }
-        let deltaTime = currentTime - previousTimeInterval
-        previousTimeInterval = currentTime
-        
-        // TODO 整理几种状态的切换条件
-        if xVelocity == 0 {
-            playerStateMachine.enter(IdleState.self)
-        } else {
-            playerStateMachine.enter(WalkingState.self)
-        }
-        
-        let displacement = CGVector(dx: deltaTime * xVelocity * 50, dy: 0)
-        let move = SKAction.move(by: displacement, duration: 0)
-        
-        let faceAction: SKAction!
-        let faceRight = xVelocity > 0
-        let faceLeft = xVelocity < 0
-        if faceLeft && playerIsFacingRight {
-            playerIsFacingRight = false
-            let faceMovement = SKAction.scaleX(to: -1, duration: 0.0)
-            faceAction = SKAction.sequence([move, faceMovement])
-        }
-        else if faceRight && !playerIsFacingRight {
-            playerIsFacingRight = true
-            let faceMovement = SKAction.scaleX(to: 1, duration: 0.0)
-            faceAction = SKAction.sequence([move, faceMovement])
-        }
-        else {
-            faceAction = move
-        }
-        player.run(faceAction)
+
+        player.update(currentTime)
     }
 }

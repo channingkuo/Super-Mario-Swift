@@ -65,6 +65,8 @@
 		D7588CA124F3E7C0009E5FBF /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */; };
 		D777CF4324E6562400C82215 /* GameStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777CF4224E6562400C82215 /* GameStatesEnum.swift */; };
 		D777CF4424E6562400C82215 /* GameStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777CF4224E6562400C82215 /* GameStatesEnum.swift */; };
+		D7AC3E9225135B70005F9979 /* PlayerKeyBoardStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AC3E9125135B70005F9979 /* PlayerKeyBoardStateMachine.swift */; };
+		D7AC3E9325135B70005F9979 /* PlayerKeyBoardStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AC3E9125135B70005F9979 /* PlayerKeyBoardStateMachine.swift */; };
 		D7D0D5ED2500B500002ED9EA /* PlayerStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0D5EC2500B500002ED9EA /* PlayerStatesEnum.swift */; };
 		D7D0D5EE2500B500002ED9EA /* PlayerStatesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0D5EC2500B500002ED9EA /* PlayerStatesEnum.swift */; };
 		D7D5907624FA30C300B08A06 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5907524FA30C300B08A06 /* Map.swift */; };
@@ -121,6 +123,7 @@
 		D757FD1824F41451002B6FD0 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		D7588C9F24F3E7C0009E5FBF /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
 		D777CF4224E6562400C82215 /* GameStatesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatesEnum.swift; sourceTree = "<group>"; };
+		D7AC3E9125135B70005F9979 /* PlayerKeyBoardStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerKeyBoardStateMachine.swift; sourceTree = "<group>"; };
 		D7D0D5EC2500B500002ED9EA /* PlayerStatesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatesEnum.swift; sourceTree = "<group>"; };
 		D7D5907524FA30C300B08A06 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		D7D5907824FAA4A000B08A06 /* level_1_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_1_1.json; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 				D72F9A4B24E2C540003F2DDD /* MainMenu.swift */,
 				D7D5907524FA30C300B08A06 /* Map.swift */,
 				D72F9A6C24E2C6E0003F2DDD /* Player.swift */,
+				D7AC3E9125135B70005F9979 /* PlayerKeyBoardStateMachine.swift */,
 				D750015A250297E9001BE37A /* PlayerStateMachine.swift */,
 				D72F9A6F24E2C6EE003F2DDD /* PowerUp.swift */,
 				D72F9A5724E2C5AD003F2DDD /* Sound.swift */,
@@ -454,6 +458,7 @@
 			files = (
 				D72F9A7324E2C706003F2DDD /* Stuff.swift in Sources */,
 				D72F9A6A24E2C6D1003F2DDD /* Enemy.swift in Sources */,
+				D7AC3E9225135B70005F9979 /* PlayerKeyBoardStateMachine.swift in Sources */,
 				D750015B250297E9001BE37A /* PlayerStateMachine.swift in Sources */,
 				D72F9A5224E2C57D003F2DDD /* Level.swift in Sources */,
 				D72F9A7624E2C712003F2DDD /* Info.swift in Sources */,
@@ -486,6 +491,7 @@
 			files = (
 				D72F9A7424E2C706003F2DDD /* Stuff.swift in Sources */,
 				D72F9A6B24E2C6D1003F2DDD /* Enemy.swift in Sources */,
+				D7AC3E9325135B70005F9979 /* PlayerKeyBoardStateMachine.swift in Sources */,
 				D750015C250297E9001BE37A /* PlayerStateMachine.swift in Sources */,
 				D72F9A5324E2C57D003F2DDD /* Level.swift in Sources */,
 				D72F9A7724E2C712003F2DDD /* Info.swift in Sources */,
