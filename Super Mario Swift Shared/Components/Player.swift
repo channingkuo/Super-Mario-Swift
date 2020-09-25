@@ -11,7 +11,7 @@ import GameplayKit
 
 class Player: SKSpriteNode {
     
-    fileprivate final let maxVelocity: Double = 6.0
+    fileprivate final let maxVelocity: Double = 500.0
     // fileprivate final let maxRunVelocity: Double = 12
     // fileprivate final let walkAcceleration: Double = 5
     
@@ -22,7 +22,7 @@ class Player: SKSpriteNode {
 //    fileprivate var playerAction = false
 
     // player's speed info
-    fileprivate var velocity: Velocity = Velocity()
+    public var velocity: Velocity = Velocity()
 
     // controller key info
     fileprivate var directionKey: String = ""
@@ -32,7 +32,7 @@ class Player: SKSpriteNode {
     fileprivate var previousTimeInterval: TimeInterval = 0
 
     // player's StateMachine
-    fileprivate var playerStateMachine: GKStateMachine!
+    public var playerStateMachine: GKStateMachine!
     
     init(texture: SKTexture) {
         super.init(texture: texture, color: .black, size: texture.size())
@@ -49,11 +49,11 @@ class Player: SKSpriteNode {
         velocity = Velocity(xVelocity: 0.0, yVelocity: 0.0)
         
         playerStateMachine = GKStateMachine(states: [
-            JumpingState(player: self),
-            LandingState(player: self),
-            WalkingState(player: self),
             IdleState(player: self),
-            SlowingState(player: self)
+            WalkingState(player: self),
+            SlowingState(player: self),
+            JumpingState(player: self),
+            DeadState(player: self)
         ])
         
         playerStateMachine.enter(IdleState.self)
@@ -130,43 +130,71 @@ class Player: SKSpriteNode {
     
     func update(_ currentTime: TimeInterval) {
         let deltaTime = currentTime - previousTimeInterval
+        // 30fps
+//        deltaTime = deltaTime * 2
         previousTimeInterval = currentTime
+        
+        print(deltaTime)
         
         switch self.directionKey {
         case Constants.BUTTON_LEFT:
-          // TODO 设置加速度值，加速度小于零
-          playerStateMachine.enter(WalkingState.self)
-
-            calculateXVelocity(deltaTime: deltaTime)
-          let displacement = CGVector(dx: deltaTime * self.velocity.v_x, dy: 0)
-          let move = SKAction.move(by: displacement, duration: 0)
-
-          break
-        case Constants.BUTTON_RIGHT:
-          // TODO 设置加速度值，加速度大于零
-
-            calculateXVelocity(deltaTime: deltaTime)
-
-          // TODO 判断player面向
-          if self.velocity.v_x >= 0 {
-            playerStateMachine.enter(WalkingState.self)
+            // TODO 设置加速度值，加速度小于零
+            self.velocity.a_x = -200
             
-            let displacement = CGVector(dx: deltaTime * self.velocity.v_x, dy: 0)
-            let move = SKAction.move(by: displacement, duration: 0)
-            let faceMovement = SKAction.scaleX(to: 1, duration: 0.0)
-
-            self.run(SKAction.sequence([move, faceMovement]))
-          } else if self.velocity.v_x < 0 {
-            // 急刹车减速
-            playerStateMachine.enter(SlowingState.self)
-          }
-          break
+            calculateXVelocity(deltaTime: deltaTime)
+            
+            // 判断player面向
+            if self.velocity.v_x <= 0 {
+                // 在地面上才会进入行走状态
+                if self.action(forKey: "Sprite Animation") == nil && self.position.y <= 90 {
+                    playerStateMachine.enter(WalkingState.self)
+                }
+                
+                let displacement = CGVector(dx: deltaTime * self.velocity.v_x, dy: 0)
+                let move = SKAction.move(by: displacement, duration: 0)
+                let faceMovement = SKAction.scaleX(to: -1, duration: 0.0)
+                
+                self.run(SKAction.sequence([move, faceMovement]))
+            } else if self.velocity.v_x > 0 {
+                // 急刹车减速
+                playerStateMachine.enter(SlowingState.self)
+                let faceMovement = SKAction.scaleX(to: -1, duration: 0.0)
+                self.run(faceMovement)
+            }
+            break
+        case Constants.BUTTON_RIGHT:
+            // 设置加速度值，加速度大于零
+            self.velocity.a_x = 2000
+            print(self.position)
+            
+            calculateXVelocity(deltaTime: deltaTime)
+            
+            // 判断player面向
+            if self.velocity.v_x >= 0 {
+                // 在地面上才会进入行走状态
+                if self.action(forKey: "Sprite Animation") == nil && self.position.y <= 90  {
+                    playerStateMachine.enter(WalkingState.self)
+                }
+                
+                let displacement = CGVector(dx: deltaTime * self.velocity.v_x, dy: 0)
+                let move = SKAction.move(by: displacement, duration: 0)
+                let faceMovement = SKAction.scaleX(to: 1, duration: 0.0)
+                
+                self.run(SKAction.sequence([move, faceMovement]))
+            } else if self.velocity.v_x < 0 {
+                // 急刹车减速
+                playerStateMachine.enter(SlowingState.self)
+                let faceMovement = SKAction.scaleX(to: 1, duration: 0.0)
+                self.run(faceMovement)
+            }
+            break
         case Constants.BUTTON_DOWN:
-          
-          break
+            
+            break
         case "":
-          // TODO 方向键松开
-          break
+            // TODO 方向键松开，减速直至到站立状态
+            
+            break
         default: break
         }
         
@@ -190,15 +218,16 @@ class Player: SKSpriteNode {
 //        self.run(faceAction)
     }
     
-   func calculateXVelocity(deltaTime: TimeInterval) {
-      if self.velocity.v_x >= self.maxVelocity {
-        self.velocity.v_x = self.maxVelocity
-      } else if self.velocity.v_x <= -self.maxVelocity {
-        self.velocity.v_x = -self.maxVelocity
-      }
-
-      self.velocity.v_x = self.velocity.v_x + self.velocity.a_x * deltaTime
-   }
+    func calculateXVelocity(deltaTime: TimeInterval) {
+        // self.maxVelocity 左右缓冲5速度
+        if self.maxVelocity - 5 <= self.velocity.v_x {
+            self.velocity.v_x = self.maxVelocity
+        } else if -self.maxVelocity + 5 >= self.velocity.v_x {
+            self.velocity.v_x = -self.maxVelocity
+        } else {
+            self.velocity.v_x = self.velocity.v_x + self.velocity.a_x * deltaTime
+        }
+    }
     
     class func buildPlayer() -> Player {
         return Player(texture: SKTexture(imageNamed: "player_type_1_1"))

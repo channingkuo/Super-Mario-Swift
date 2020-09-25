@@ -69,7 +69,7 @@ class Tools {
         }
         
         // physicsBodies
-        let physicsHeight: CGFloat = 72
+        let physicsHeight: CGFloat = 70
         var physicsBodies = [SKPhysicsBody]()
         
         var start: Int = 0

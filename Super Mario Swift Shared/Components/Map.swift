@@ -16,9 +16,7 @@ class Map: SKScene {
     
     fileprivate var cameraNode: SKCameraNode = SKCameraNode.init()
     fileprivate var player: Player!
-    
-    fileprivate var playerStateMachine: GKStateMachine!
-    
+        
     init(level: String, size: CGSize) {
         super.init(size: size)
         
@@ -43,17 +41,6 @@ class Map: SKScene {
         // player
         player = Player.buildPlayer()
         self.addChild(player)
-        
-        playerStateMachine = GKStateMachine(states: [
-            JumpingState(player: player),
-            LandingState(player: player),
-            WalkingState(player: player),
-            IdleState(player: player),
-            SlowingState(player: player)
-        ])
-        
-        playerStateMachine.enter(IdleState.self)
-        
         
         let map: JSON = mapJson["map"]
         let tileWidth = map["size"].arrayValue[0].doubleValue
@@ -106,6 +93,36 @@ extension Map {
         } else {
           player.keyDown(key)
         }
+        
+        switch key {
+        case Constants.BUTTON_LEFT:
+            // 设置加速度值，加速度小于零
+//            player.velocity.a_x = -200
+            // 设置初始速度，方便快速启动
+//            player.velocity.v_x = -50
+//            if player.velocity.v_x <= 0 {
+//                player.playerStateMachine.enter(WalkingState.self)
+//            } else {
+//                player.playerStateMachine.enter(SlowingState.self)
+//            }
+            break
+        case Constants.BUTTON_RIGHT:
+            // 设置加速度值，加速度小于零
+//            player.velocity.a_x = 200
+            // 设置初始速度，方便快速启动
+//            player.velocity.v_x = 50
+//            if player.velocity.v_x >= 0 {
+//                player.playerStateMachine.enter(WalkingState.self)
+//            } else {
+//                player.playerStateMachine.enter(SlowingState.self)
+//            }
+            break
+        case Constants.BUTTON_A:
+            player.playerStateMachine.enter(JumpingState.self)
+            break
+        default:
+            break
+        }
     }
     
     override func keyUp(with event: NSEvent) {
@@ -129,5 +146,7 @@ extension Map {
         guard let player = player else { return }
 
         player.update(currentTime)
+        
+        self.cameraNode.position.x = player.position.x
     }
 }

@@ -73,7 +73,7 @@ class JumpingState: PlayerState {
         
         hasFinishedJump = false
         // TODO 跳起来的位置变换处理，曲线运动，空中受方向键影响的处理
-        player.run(.move(by: CGVector(dx: 0.0, dy: 110), duration: 0.1))
+        player.run(.move(by: CGVector(dx: 0.0, dy: 210), duration: 0.1))
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) {(timer) in
             self.hasFinishedJump = true
@@ -88,8 +88,12 @@ class SlowingState: PlayerState {
         return true
     }
     
+    let texture: SKTexture = SKTexture(imageNamed: "player_type_1_5")
+    lazy var action = { SKAction.animate(with: [texture], timePerFrame: 0.1) }()
+    
     override func didEnter(from previousState: GKState?) {
-        
+        player.removeAction(forKey: characterAnimationKey)
+        player.run(action, withKey: characterAnimationKey)
     }
 }
 
